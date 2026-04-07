@@ -1,0 +1,3 @@
+
+cd /Users/noahwuhrmann/Documents/python_projekte/eigene/my_cv
+npm run dev
