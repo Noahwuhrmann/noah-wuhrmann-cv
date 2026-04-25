@@ -1454,7 +1454,6 @@ button {
 
 .resume-logo-card {
   flex: 0 0 auto;
-  min-width: 228px;
   height: 4.9rem;
   display: flex;
   align-items: center;
@@ -1475,32 +1474,30 @@ button {
 }
 
 .resume-logo-card.is-standard {
-  min-width: 228px;
+  min-width: 0;
 }
 
 .resume-logo-card.is-wide {
-  min-width: 268px;
+  min-width: 0;
 }
 
 .resume-logo-card.is-ultra-wide {
-  min-width: 430px;
+  min-width: 0;
 }
 
 .resume-logo-visual {
-  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.4rem;
-  overflow: hidden;
+  flex: 0 0 auto;
 }
 
 .resume-logo-image {
   display: block;
-  height: 56px;
+  height: 100%;
   width: auto;
-  max-width: 100%;
+  max-width: none;
   object-fit: contain;
   filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.24));
 }
@@ -1883,21 +1880,20 @@ button {
   }
 
   .resume-logo-card {
-    min-width: 188px;
     height: 4.2rem;
     padding: 0.72rem 0.9rem;
   }
 
   .resume-logo-card.is-standard {
-    min-width: 188px;
+    min-width: 0;
   }
 
   .resume-logo-card.is-wide {
-    min-width: 220px;
+    min-width: 0;
   }
 
   .resume-logo-card.is-ultra-wide {
-    min-width: 320px;
+    min-width: 0;
   }
 
   .resume-logo-wordmark {

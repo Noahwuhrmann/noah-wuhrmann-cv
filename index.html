@@ -9,6 +9,14 @@
       content="Portfolio und Bewerbungswebseite von Noah Wuhrmann mit Projekten, Erfahrung und Kontakt."
     />
     <title>Noah Wuhrmann | Portfolio &amp; Bewerbung</title>
+    <script type="module">
+      const params = new URLSearchParams(window.location.search)
+      const redirect = params.get("redirect")
+
+      if (redirect) {
+        window.history.replaceState(null, "", decodeURIComponent(redirect))
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weiterleitung...</title>
+  </head>
+  <body>
+    <script>
+      ;(() => {
+        const path = `${window.location.pathname}${window.location.search}${window.location.hash}`
+        const segments = window.location.pathname.split("/").filter(Boolean)
+        const basePath = segments.length > 0 ? `/${segments[0]}/` : "/"
+        const redirectUrl = `${basePath}?redirect=${encodeURIComponent(path)}`
+
+        window.location.replace(redirectUrl)
+      })()
+    </script>
+  </body>
+  </html>
