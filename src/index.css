@@ -1770,7 +1770,10 @@ button {
     left: 0;
     right: 0;
     top: calc(100% + 0.45rem);
+    max-height: calc(100svh - 5.75rem);
     margin-top: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     border-radius: 1.35rem;
     background: linear-gradient(180deg, rgba(10, 14, 22, 0.94), rgba(5, 7, 12, 0.9));
   }
@@ -1790,6 +1793,7 @@ button {
     text-align: center;
     font-weight: 650;
     letter-spacing: 0;
+    overflow-wrap: anywhere;
   }
 
   .page-view {
@@ -1811,6 +1815,12 @@ button {
   .page-lead {
     font-size: 0.98rem;
     line-height: 1.55;
+  }
+
+  .page-title,
+  .content-card h2,
+  .timeline-row h2 {
+    overflow-wrap: anywhere;
   }
 
   .content-card {
@@ -1855,6 +1865,7 @@ button {
 
   .resume-mobile-toggle-meta {
     font-size: 0.82rem;
+    white-space: nowrap;
   }
 
   .contact-link {
@@ -1916,7 +1927,7 @@ button {
 
 @media (max-width: 640px) {
   .container {
-    width: min(calc(100% - 1rem), var(--max-width));
+    width: min(calc(100% - 1.25rem), var(--max-width));
   }
 
   .site-header {
@@ -1975,12 +1986,12 @@ button {
   }
 
   .home-hero-shell {
-    min-height: 108svh;
-    padding: 1.2rem 1rem 4.6rem;
+    min-height: 101svh;
+    padding: 1.2rem 1rem 4rem;
   }
 
   .hero-name-stage {
-    min-height: calc(100svh - 3rem);
+    min-height: calc(96svh - 3rem);
     padding: 0;
   }
 
@@ -2060,6 +2071,7 @@ button {
   }
 
   .page-main {
+    padding-top: 1.25rem;
     padding-bottom: 3rem;
   }
 
@@ -2088,12 +2100,12 @@ button {
   }
 
   .about-portrait-panel {
-    min-height: 23.5rem;
+    min-height: 21.5rem;
   }
 
   .about-portrait-image {
     width: min(100%, 300px);
-    max-height: 390px;
+    max-height: 360px;
   }
 
   .compact-grid,
@@ -2113,6 +2125,7 @@ button {
 
   .timeline-row {
     padding: 0.95rem;
+    gap: 0.68rem;
   }
 
   .timeline-badge {
@@ -2125,6 +2138,12 @@ button {
     min-height: 3.65rem;
     padding: 0.9rem 0.95rem;
     border-radius: 1.12rem;
+  }
+
+  .resume-mobile-toggle {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
   }
 
   .resume-logo-band-section {
@@ -2155,11 +2174,15 @@ button {
   .contact-text span {
     overflow-wrap: anywhere;
   }
+
+  .contact-text {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 480px) {
   .container {
-    width: min(calc(100% - 0.75rem), var(--max-width));
+    width: min(calc(100% - 1rem), var(--max-width));
   }
 
   .language-button {
@@ -2167,11 +2190,11 @@ button {
   }
 
   .hero-title {
-    font-size: 3.45rem;
+    font-size: 3.28rem;
   }
 
   .hero-name-stage {
-    min-height: calc(100svh - 3.5rem);
+    min-height: calc(96svh - 3.5rem);
   }
 
   .page-title {
@@ -2179,16 +2202,27 @@ button {
   }
 
   .about-portrait-panel {
-    min-height: 21.5rem;
+    min-height: 19.75rem;
   }
 
   .about-portrait-image {
-    width: min(100%, 272px);
-    max-height: 360px;
+    width: min(100%, 252px);
+    max-height: 330px;
   }
 
   .resume-logo-card {
     height: 3.75rem;
     padding: 0.62rem 0.78rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .content-card:hover,
+  .timeline-row:hover,
+  .resume-track-card:hover,
+  .resume-education-toggle:hover,
+  .resume-mobile-toggle:hover,
+  .contact-link:hover {
+    transform: none;
   }
 }
