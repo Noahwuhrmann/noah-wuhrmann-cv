@@ -1717,8 +1717,12 @@ button {
 
   .menu-toggle {
     display: inline-flex;
-    width: 2.85rem;
-    height: 2.85rem;
+    width: 3.7rem;
+    height: 3.7rem;
+  }
+
+  .menu-toggle-line {
+    width: 1.3rem;
   }
 
   .timeline-row {
@@ -1948,22 +1952,24 @@ button {
   }
 
   .nav-actions {
-    gap: 0.5rem;
+    gap: 0.65rem;
   }
 
   .language-switcher {
-    padding: 0.12rem;
+    gap: 0.26rem;
+    padding: 0.16rem;
   }
 
   .language-button {
-    min-width: 2.3rem;
-    padding: 0.34rem 0.52rem;
-    font-size: 0.82rem;
+    min-width: 3rem;
+    padding: 0.44rem 0.68rem;
+    font-size: 1.06rem;
+    font-weight: 700;
   }
 
   .menu-toggle {
-    width: 2.55rem;
-    height: 2.55rem;
+    width: 3.3rem;
+    height: 3.3rem;
   }
 
   .mobile-nav {
@@ -2186,7 +2192,7 @@ button {
   }
 
   .language-button {
-    min-width: 2.12rem;
+    min-width: 2.85rem;
   }
 
   .hero-title {
