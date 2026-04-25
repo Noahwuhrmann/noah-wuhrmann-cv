@@ -1705,9 +1705,10 @@ button {
 
 @media (max-width: 920px) {
   .nav-shell {
-    grid-template-columns: 1fr auto;
-    gap: 0.9rem;
-    min-height: 4rem;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 3.9rem;
+    padding: 0.72rem 0;
   }
 
   .nav-links-desktop {
@@ -1716,6 +1717,8 @@ button {
 
   .menu-toggle {
     display: inline-flex;
+    width: 2.85rem;
+    height: 2.85rem;
   }
 
   .timeline-row {
@@ -1731,7 +1734,7 @@ button {
   }
 
   .page-shell-home .nav-shell-home-scrolled {
-    padding: 0.85rem 0.9rem;
+    padding: 0.72rem 0.9rem;
   }
 
   .home-reveal-shell {
@@ -1761,6 +1764,113 @@ button {
   .home-reveal-label p {
     max-width: none;
   }
+
+  .mobile-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 0.45rem);
+    margin-top: 0;
+    border-radius: 1.35rem;
+    background: linear-gradient(180deg, rgba(10, 14, 22, 0.94), rgba(5, 7, 12, 0.9));
+  }
+
+  .mobile-nav-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    padding: 0.65rem;
+  }
+
+  .mobile-nav-link {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 0.85rem;
+    text-align: center;
+    font-weight: 650;
+    letter-spacing: 0;
+  }
+
+  .page-view {
+    padding-top: 0.35rem;
+  }
+
+  .page-header {
+    border-radius: 1.65rem;
+    padding: 1.55rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    line-height: 1.02;
+    letter-spacing: 0;
+  }
+
+  .page-lead {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .content-card {
+    padding: 1.15rem;
+    border-radius: 1.25rem;
+  }
+
+  .content-card h2,
+  .timeline-row h2 {
+    letter-spacing: 0;
+    line-height: 1.15;
+  }
+
+  .timeline-grid {
+    gap: 0.82rem;
+  }
+
+  .timeline-row {
+    gap: 0.75rem;
+    padding: 1.08rem;
+    border-radius: 1.22rem;
+  }
+
+  .timeline-row ul {
+    padding-left: 1rem;
+  }
+
+  .resume-mobile-layout {
+    gap: 0.9rem;
+  }
+
+  .resume-mobile-section {
+    gap: 0.85rem;
+  }
+
+  .resume-mobile-section-header,
+  .resume-mobile-toggle {
+    min-height: 4rem;
+    padding: 0.95rem 1rem;
+    border-radius: 1.25rem;
+  }
+
+  .resume-mobile-toggle-meta {
+    font-size: 0.82rem;
+  }
+
+  .contact-link {
+    min-height: 4.5rem;
+    padding: 0.95rem;
+  }
+
+  .tag-list {
+    gap: 0.48rem;
+  }
+
+  .tag,
+  .project-badge {
+    min-height: 2rem;
+    letter-spacing: 0;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1769,20 +1879,38 @@ button {
   }
 
   .about-portrait-panel {
-    min-height: 0;
-    padding: 1.2rem 1rem 0;
+    min-height: 26rem;
+    padding: 1rem 1rem 0;
+    border-radius: 1.55rem;
   }
 
   .about-portrait-image {
-    width: min(100%, 310px);
-    max-height: 420px;
+    width: min(100%, 340px);
+    max-height: 440px;
   }
 
   .resume-mobile-section-header,
   .resume-mobile-toggle,
   .home-hero-shell,
   .page-header {
-    padding: 1.5rem;
+    padding: 1.3rem;
+  }
+
+  .page-title {
+    font-size: 2.55rem;
+  }
+
+  .eyebrow {
+    min-height: 34px;
+    padding: 0.38rem 0.72rem;
+    font-size: 0.78rem;
+  }
+
+  .content-card p,
+  .timeline-row p,
+  .contact-text span,
+  .availability span {
+    font-size: 0.95rem;
   }
 }
 
@@ -1800,12 +1928,16 @@ button {
   }
 
   .nav-shell {
-    min-height: 3.7rem;
-    padding: 0.7rem 0;
+    min-height: 3.55rem;
+    padding: 0.62rem 0;
+  }
+
+  .page-shell-home .nav-shell-home-scrolled {
+    padding: 0.62rem 0.72rem;
   }
 
   .nav-actions {
-    gap: 0.55rem;
+    gap: 0.5rem;
   }
 
   .language-switcher {
@@ -1818,23 +1950,45 @@ button {
     font-size: 0.82rem;
   }
 
+  .menu-toggle {
+    width: 2.55rem;
+    height: 2.55rem;
+  }
+
+  .mobile-nav {
+    border-radius: 1.15rem;
+  }
+
+  .mobile-nav-links {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+
+  .mobile-nav-link {
+    min-height: 2.85rem;
+    justify-content: flex-start;
+    padding: 0.72rem 0.85rem;
+  }
+
   .home-hero {
     min-height: auto;
   }
 
   .home-hero-shell {
-    min-height: calc(100vh - 7rem);
-    padding-bottom: 4.5rem;
+    min-height: calc(100svh - 6.2rem);
+    padding: 1.2rem 1rem 3.4rem;
   }
 
   .hero-name-stage {
-    min-height: 22rem;
+    min-height: 24rem;
     padding: 0;
   }
 
   .hero-title {
-    font-size: clamp(3rem, 16vw, 5rem);
-    transform: translateY(-1.15rem);
+    font-size: 4rem;
+    line-height: 0.96;
+    letter-spacing: 0;
+    transform: translateY(-0.65rem);
   }
 
   .hero-title-haze {
@@ -1850,17 +2004,17 @@ button {
 
   .home-reveal {
     margin-top: 0;
-    padding-bottom: 2.8rem;
+    padding-bottom: 2.35rem;
   }
 
   .home-reveal-shell {
     min-height: 0;
-    padding: 1rem;
-    border-radius: 1.35rem;
+    padding: 0.95rem;
+    border-radius: 1.2rem;
   }
 
   .home-reveal-label p {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .home-marquee-pill {
@@ -1903,5 +2057,138 @@ button {
   .footer-row {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .page-main {
+    padding-bottom: 3rem;
+  }
+
+  .page-header {
+    border-radius: 1.25rem;
+    padding: 1.05rem;
+  }
+
+  .page-title {
+    margin-top: 0.78rem;
+    font-size: 2.15rem;
+    line-height: 1.06;
+  }
+
+  .page-lead {
+    margin-top: 0.78rem;
+    font-size: 0.94rem;
+  }
+
+  .about-hero {
+    gap: 0.9rem;
+  }
+
+  .about-portrait-shell {
+    max-width: none;
+  }
+
+  .about-portrait-panel {
+    min-height: 23.5rem;
+  }
+
+  .about-portrait-image {
+    width: min(100%, 300px);
+    max-height: 390px;
+  }
+
+  .compact-grid,
+  .contact-layout,
+  .contact-column,
+  .contact-aside {
+    gap: 0.75rem;
+  }
+
+  .content-card {
+    padding: 1rem;
+  }
+
+  .content-card h2 {
+    font-size: 1.08rem;
+  }
+
+  .timeline-row {
+    padding: 0.95rem;
+  }
+
+  .timeline-badge {
+    min-height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .resume-mobile-section-header,
+  .resume-mobile-toggle {
+    min-height: 3.65rem;
+    padding: 0.9rem 0.95rem;
+    border-radius: 1.12rem;
+  }
+
+  .resume-logo-band-section {
+    margin-top: 1rem;
+  }
+
+  .resume-logo-band-shell {
+    border-radius: 1.15rem;
+  }
+
+  .resume-logo-band-label span {
+    font-size: 0.84rem;
+  }
+
+  .contact-link {
+    align-items: flex-start;
+    min-height: 0;
+    gap: 0.8rem;
+    border-radius: 1.12rem;
+  }
+
+  .contact-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
+  .contact-text span {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(calc(100% - 0.75rem), var(--max-width));
+  }
+
+  .language-button {
+    min-width: 2.12rem;
+  }
+
+  .hero-title {
+    font-size: 3.45rem;
+  }
+
+  .hero-name-stage {
+    min-height: 21.5rem;
+  }
+
+  .page-title {
+    font-size: 1.95rem;
+  }
+
+  .about-portrait-panel {
+    min-height: 21.5rem;
+  }
+
+  .about-portrait-image {
+    width: min(100%, 272px);
+    max-height: 360px;
+  }
+
+  .resume-logo-card {
+    height: 3.75rem;
+    padding: 0.62rem 0.78rem;
   }
 }
