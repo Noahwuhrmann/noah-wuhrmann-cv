@@ -1975,12 +1975,12 @@ button {
   }
 
   .home-hero-shell {
-    min-height: calc(100svh - 6.2rem);
-    padding: 1.2rem 1rem 3.4rem;
+    min-height: 108svh;
+    padding: 1.2rem 1rem 4.6rem;
   }
 
   .hero-name-stage {
-    min-height: 24rem;
+    min-height: calc(100svh - 3rem);
     padding: 0;
   }
 
@@ -2171,7 +2171,7 @@ button {
   }
 
   .hero-name-stage {
-    min-height: 21.5rem;
+    min-height: calc(100svh - 3.5rem);
   }
 
   .page-title {
