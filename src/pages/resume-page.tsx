@@ -58,6 +58,7 @@ const resumeLogoSlotClasses = {
 
 export function ResumePage() {
   const { copy } = useLanguage()
+  const [isCareerOpen, setIsCareerOpen] = useState(true)
   const [isEducationOpen, setIsEducationOpen] = useState(false)
 
   const careerRows = copy.resume.rows.filter((row) => row.career)
@@ -158,11 +159,30 @@ export function ResumePage() {
 
         <div className="resume-mobile-layout">
           <section className="resume-mobile-section">
-            <div className="resume-mobile-section-header">
-              <h2>{copy.resume.labels.career}</h2>
-            </div>
+            <button
+              aria-controls="resume-career-mobile"
+              aria-expanded={isCareerOpen}
+              className={cn(
+                "resume-mobile-toggle resume-mobile-toggle-career",
+                isCareerOpen && "open",
+              )}
+              onClick={() => setIsCareerOpen((open) => !open)}
+              type="button"
+            >
+              <span>{copy.resume.labels.career}</span>
+              <span className="resume-mobile-toggle-meta">
+                {isCareerOpen
+                  ? copy.resume.labels.collapse
+                  : copy.resume.labels.expand}
+              </span>
+              <span className="resume-education-toggle-chevron" aria-hidden="true" />
+            </button>
 
-            <div className="timeline-grid">
+            <div
+              className="timeline-grid resume-mobile-career-panel"
+              hidden={!isCareerOpen}
+              id="resume-career-mobile"
+            >
               {careerRows.map((row) => (
                 <article
                   className="timeline-row"
