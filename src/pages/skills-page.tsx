@@ -114,15 +114,15 @@ export function SkillsPage() {
               </div>
               <h2>{item.title}</h2>
               <p>{item.body}</p>
-              <div className="skill-meter" aria-label={`${item.title}: ${item.level}/${maxSkillLevel}`}>
-                <span />
-              </div>
               <div className="skills-chip-list skill-card-tags">
                 {item.tags.map((tag) => (
                   <span className="skills-chip" key={tag}>
                     {tag}
                   </span>
                 ))}
+              </div>
+              <div className="skill-meter" aria-label={`${item.title}: ${item.level}/${maxSkillLevel}`}>
+                <span />
               </div>
             </article>
           ))}
