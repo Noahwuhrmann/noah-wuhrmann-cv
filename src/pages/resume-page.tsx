@@ -189,7 +189,7 @@ export function ResumePage() {
             >
               {careerRows.map((row) => (
                 <article
-                  className="timeline-row"
+                  className="timeline-row timeline-row-career"
                   key={`${row.id}-career-mobile`}
                 >
                   <div>

@@ -1389,9 +1389,9 @@ button {
 
 .resume-track-card-career {
   background:
-    linear-gradient(180deg, rgba(42, 51, 68, 0.88), rgba(18, 24, 35, 0.76)),
-    rgba(13, 17, 26, 0.56);
-  border-color: rgba(122, 178, 255, 0.16);
+    linear-gradient(180deg, rgba(36, 49, 76, 0.82), rgba(17, 25, 39, 0.72)),
+    rgba(12, 18, 28, 0.52);
+  border-color: rgba(118, 170, 255, 0.2);
 }
 
 .resume-track-card-career::after,
@@ -1483,9 +1483,16 @@ button {
 
 .resume-mobile-toggle-career.open {
   background:
-    linear-gradient(180deg, rgba(42, 51, 68, 0.88), rgba(18, 24, 35, 0.76)),
-    rgba(13, 17, 26, 0.56);
-  border-color: rgba(122, 178, 255, 0.16);
+    linear-gradient(180deg, rgba(36, 49, 76, 0.82), rgba(17, 25, 39, 0.72)),
+    rgba(12, 18, 28, 0.52);
+  border-color: rgba(118, 170, 255, 0.2);
+}
+
+.timeline-row-career {
+  background:
+    linear-gradient(180deg, rgba(36, 49, 76, 0.82), rgba(17, 25, 39, 0.72)),
+    rgba(12, 18, 28, 0.52);
+  border-color: rgba(118, 170, 255, 0.2);
 }
 
 .resume-mobile-education-panel {
