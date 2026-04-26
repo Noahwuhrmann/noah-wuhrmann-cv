@@ -97,11 +97,6 @@ export function ResumePage() {
               <span className="resume-career-toggle-title">
                 {copy.resume.labels.career}
               </span>
-              <span className="resume-career-toggle-hint">
-                {isCareerOpen
-                  ? copy.resume.labels.collapse
-                  : copy.resume.labels.expand}
-              </span>
               <span className="resume-education-toggle-chevron" aria-hidden="true" />
             </button>
 
@@ -114,11 +109,6 @@ export function ResumePage() {
             >
               <span className="resume-education-toggle-title">
                 {copy.resume.labels.education}
-              </span>
-              <span className="resume-education-toggle-hint">
-                {isEducationOpen
-                  ? copy.resume.labels.collapse
-                  : copy.resume.labels.expand}
               </span>
               <span className="resume-education-toggle-chevron" aria-hidden="true" />
             </button>
@@ -188,11 +178,6 @@ export function ResumePage() {
               type="button"
             >
               <span>{copy.resume.labels.career}</span>
-              <span className="resume-mobile-toggle-meta">
-                {isCareerOpen
-                  ? copy.resume.labels.collapse
-                  : copy.resume.labels.expand}
-              </span>
               <span className="resume-education-toggle-chevron" aria-hidden="true" />
             </button>
 
@@ -235,11 +220,6 @@ export function ResumePage() {
               type="button"
             >
               <span>{copy.resume.labels.education}</span>
-              <span className="resume-mobile-toggle-meta">
-                {isEducationOpen
-                  ? copy.resume.labels.collapse
-                  : copy.resume.labels.expand}
-              </span>
               <span className="resume-education-toggle-chevron" aria-hidden="true" />
             </button>
 
