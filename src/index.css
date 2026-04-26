@@ -2048,12 +2048,13 @@ button {
 
 .skill-meter {
   height: 11px;
-  margin-top: auto;
+  margin-top: 0;
 }
 
 .skill-card-tags {
-  margin-top: 1.2rem;
-  padding-bottom: 1.35rem;
+  margin-top: auto;
+  margin-bottom: 1.1rem;
+  padding-top: 1.4rem;
 }
 
 .tone-1 {
