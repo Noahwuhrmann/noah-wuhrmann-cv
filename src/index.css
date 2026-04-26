@@ -1568,10 +1568,12 @@ button {
   gap: 0.95rem;
   width: max-content;
   animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
 }
 
 .resume-logo-card {
-  flex: 0 0 auto;
+  flex: 0 0 12rem;
+  width: 12rem;
   height: 4.9rem;
   display: flex;
   align-items: center;
@@ -1583,6 +1585,7 @@ button {
     linear-gradient(180deg, rgba(36, 49, 76, 0.42), rgba(17, 25, 39, 0.3)),
     rgba(12, 18, 28, 0.38);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow: hidden;
 }
 
 .resume-logo-card.education {
@@ -1592,30 +1595,34 @@ button {
 }
 
 .resume-logo-card.is-standard {
-  min-width: 0;
+  flex-basis: 11rem;
+  width: 11rem;
 }
 
 .resume-logo-card.is-wide {
-  min-width: 0;
+  flex-basis: 14rem;
+  width: 14rem;
 }
 
 .resume-logo-card.is-ultra-wide {
-  min-width: 0;
+  flex-basis: 17rem;
+  width: 17rem;
 }
 
 .resume-logo-visual {
   height: 100%;
+  width: 100%;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
 }
 
 .resume-logo-image {
   display: block;
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-width: none;
+  max-width: 100%;
   object-fit: contain;
   filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.24));
 }
@@ -2165,20 +2172,25 @@ button {
   }
 
   .resume-logo-card {
+    flex-basis: 10.5rem;
+    width: 10.5rem;
     height: 4.2rem;
     padding: 0.72rem 0.9rem;
   }
 
   .resume-logo-card.is-standard {
-    min-width: 0;
+    flex-basis: 9.5rem;
+    width: 9.5rem;
   }
 
   .resume-logo-card.is-wide {
-    min-width: 0;
+    flex-basis: 11.5rem;
+    width: 11.5rem;
   }
 
   .resume-logo-card.is-ultra-wide {
-    min-width: 0;
+    flex-basis: 13rem;
+    width: 13rem;
   }
 
   .resume-logo-wordmark {

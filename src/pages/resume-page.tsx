@@ -281,7 +281,8 @@ export function ResumePage() {
                             <img
                               alt={logo.alt}
                               className="resume-logo-image"
-                              loading="lazy"
+                              decoding="async"
+                              loading="eager"
                               src={logo.src}
                             />
                           ) : (
