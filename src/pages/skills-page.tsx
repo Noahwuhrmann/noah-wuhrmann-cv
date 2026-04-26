@@ -72,11 +72,6 @@ export function SkillsPage() {
                 ))}
               </div>
 
-              <div className="skills-visual-legend">
-                {copy.skills.visualLegend.map((legend) => (
-                  <span key={legend}>{legend}</span>
-                ))}
-              </div>
             </div>
           </article>
 
