@@ -1,5 +1,6 @@
 import { useLanguage } from "@/lib/language-context"
-import portraitImage from "@/assets/noah-portrait.png"
+
+const portraitImage = `${import.meta.env.BASE_URL}noah_wuhrmann-portrait.png`
 
 export function AboutPage() {
   const { copy } = useLanguage()
