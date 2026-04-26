@@ -2171,6 +2171,10 @@ button {
     font-size: 1rem;
   }
 
+  .resume-logo-band-track {
+    animation-duration: 26s;
+  }
+
   .resume-logo-card {
     flex-basis: 10.5rem;
     width: 10.5rem;
