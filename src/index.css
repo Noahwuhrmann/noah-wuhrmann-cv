@@ -846,7 +846,7 @@ button {
 
 .about-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 360px);
+  grid-template-columns: minmax(0, 1.25fr) minmax(250px, 320px);
   gap: clamp(1.5rem, 3vw, 2.75rem);
   align-items: stretch;
 }
@@ -894,7 +894,7 @@ button {
   position: relative;
   z-index: 1;
   display: block;
-  width: min(130%, 480px);
+  width: min(145%, 500px);
   max-width: none;
   max-height: 728px;
   object-fit: contain;
@@ -2240,7 +2240,7 @@ button {
   }
 
   .about-portrait-shell {
-    max-width: 420px;
+    max-width: 360px;
   }
 }
 
@@ -2437,14 +2437,14 @@ button {
   }
 
   .about-portrait-panel {
-    min-height: 26rem;
+    min-height: 23.5rem;
     padding: 1rem 1rem 0;
     border-radius: 1.55rem;
   }
 
   .about-portrait-image {
-    width: min(100%, 340px);
-    max-height: 440px;
+    width: min(118%, 380px);
+    max-height: 430px;
   }
 
   .resume-mobile-section-header,
@@ -2658,12 +2658,12 @@ button {
   }
 
   .about-portrait-panel {
-    min-height: 21.5rem;
+    min-height: 18.75rem;
   }
 
   .about-portrait-image {
-    width: min(100%, 300px);
-    max-height: 360px;
+    width: min(116%, 340px);
+    max-height: 345px;
   }
 
   .compact-grid,
@@ -2760,12 +2760,12 @@ button {
   }
 
   .about-portrait-panel {
-    min-height: 19.75rem;
+    min-height: 17.25rem;
   }
 
   .about-portrait-image {
-    width: min(100%, 252px);
-    max-height: 330px;
+    width: min(114%, 300px);
+    max-height: 315px;
   }
 
   .resume-logo-card {
