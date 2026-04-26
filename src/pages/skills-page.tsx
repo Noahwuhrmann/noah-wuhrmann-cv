@@ -47,23 +47,36 @@ export function SkillsPage() {
               </div>
             </div>
 
-            <div className="skills-visual-board" aria-hidden="true">
-              {copy.skills.items.map((item, index) => (
-                <div
-                  className={`skills-visual-track tone-${(index % 5) + 1}`}
-                  key={`${item.title}-visual`}
-                  style={getSkillStyle(item.level)}
-                  title={item.title}
-                >
-                  <span className="skills-visual-code">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="skills-visual-bar">
-                    <span />
-                  </span>
-                  <span className="skills-visual-tooltip">{item.title}</span>
-                </div>
-              ))}
+            <div className="skills-visual-board">
+              <div className="skills-visual-header">
+                <h3>{copy.skills.visualTitle}</h3>
+                <p>{copy.skills.visualHint}</p>
+              </div>
+
+              <div className="skills-visual-list">
+                {copy.skills.items.map((item, index) => (
+                  <div
+                    className={`skills-visual-track tone-${(index % 5) + 1}`}
+                    key={`${item.title}-visual`}
+                    style={getSkillStyle(item.level)}
+                    title={item.title}
+                  >
+                    <span className="skills-visual-code">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="skills-visual-bar">
+                      <span />
+                    </span>
+                    <span className="skills-visual-tooltip">{item.title}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="skills-visual-legend">
+                {copy.skills.visualLegend.map((legend) => (
+                  <span key={legend}>{legend}</span>
+                ))}
+              </div>
             </div>
           </article>
 

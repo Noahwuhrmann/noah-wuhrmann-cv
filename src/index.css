@@ -1777,9 +1777,10 @@ button {
 }
 
 .skills-visual-board {
-  display: grid;
-  align-content: center;
-  gap: 0.92rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
   min-height: 100%;
   padding: 1rem;
   border-radius: calc(var(--radius-xl) - 4px);
@@ -1790,6 +1791,55 @@ button {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
     inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.skills-visual-header {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.skills-visual-header h3 {
+  margin: 0;
+  color: rgba(245, 247, 255, 0.96);
+  font-size: 1.08rem;
+  font-weight: 790;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.skills-visual-header p {
+  max-width: 30rem;
+  margin: 0;
+  color: rgba(153, 167, 189, 0.9);
+  font-size: 0.82rem;
+  line-height: 1.38;
+}
+
+.skills-visual-list {
+  display: grid;
+  gap: 0.92rem;
+  margin: auto 0;
+  padding: 0.6rem 0;
+}
+
+.skills-visual-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skills-visual-legend span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0.34rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(215, 224, 241, 0.78);
+  font-size: 0.76rem;
+  font-weight: 720;
+  letter-spacing: 0;
 }
 
 .skills-visual-track {
@@ -2827,8 +2877,16 @@ button {
   }
 
   .skills-visual-board {
-    min-height: 220px;
+    min-height: 320px;
     padding: 0.88rem;
+  }
+
+  .skills-visual-header h3 {
+    font-size: 1rem;
+  }
+
+  .skills-visual-header p {
+    font-size: 0.78rem;
   }
 
   .skills-tool-panel,
@@ -2868,6 +2926,11 @@ button {
   .skills-visual-track {
     grid-template-columns: 34px minmax(0, 1fr);
     gap: 0.58rem;
+  }
+
+  .skills-visual-tooltip {
+    left: calc(34px + 0.9rem);
+    max-width: min(22rem, calc(100% - 34px - 0.9rem));
   }
 
   .skills-visual-bar {

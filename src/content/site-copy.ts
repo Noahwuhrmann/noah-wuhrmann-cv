@@ -120,6 +120,9 @@ export type SiteCopy = {
     highlightLabel: string
     highlightTitle: string
     highlightBody: string
+    visualTitle: string
+    visualHint: string
+    visualLegend: string[]
     spotlights: SkillSpotlight[]
     toolLabel: string
     toolTitle: string
@@ -350,6 +353,10 @@ export const siteCopy: Record<Language, SiteCopy> = {
       highlightTitle: "Praxis, Analyse und digitale Umsetzung in einem System",
       highlightBody:
         "Ich verbinde Verantwortung aus dem operativen Alltag mit methodischem Denken aus dem Studium. Dadurch entstehen Lösungen, die fachlich sauber sind und im echten Arbeitsumfeld funktionieren.",
+      visualTitle: "Skill-Kompass",
+      visualHint:
+        "Die Nummern 01-05 verweisen auf die Detailkarten darunter. Die Balkenlänge zeigt die aktuelle Gewichtung auf einer Skala bis 5.",
+      visualLegend: ["01-05 = Kompetenzfelder", "Länge = Stärke / Gewichtung"],
       spotlights: [
         {
           label: "Praxisnähe",
@@ -722,6 +729,10 @@ export const siteCopy: Record<Language, SiteCopy> = {
       highlightTitle: "Practice, analysis and digital execution in one system",
       highlightBody:
         "I combine operational responsibility from day-to-day business with methodical thinking from my studies. That creates solutions that are analytically sound and useful in real working environments.",
+      visualTitle: "Skill compass",
+      visualHint:
+        "The numbers 01-05 refer to the detailed cards below. Bar length shows the current weighting on a scale up to 5.",
+      visualLegend: ["01-05 = capability areas", "Length = strength / weighting"],
       spotlights: [
         {
           label: "Practical relevance",
