@@ -1075,6 +1075,13 @@ button {
   content: none;
 }
 
+.resume-parallel-grid.tracks-closed .resume-period-cell,
+.resume-parallel-grid.tracks-closed .resume-track-card,
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-period-cell,
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-track-card {
+  display: none;
+}
+
 .resume-track-header,
 .resume-education-toggle {
   min-height: 78px;
