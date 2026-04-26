@@ -37,12 +37,6 @@ type SkillItem = {
   tags: string[]
 }
 
-type SkillSpotlight = {
-  label: string
-  value: string
-  body: string
-}
-
 type SkillToolGroup = {
   title: string
   items: string[]
@@ -122,7 +116,6 @@ export type SiteCopy = {
     highlightBody: string
     visualTitle: string
     visualHint: string
-    spotlights: SkillSpotlight[]
     toolLabel: string
     toolTitle: string
     toolGroups: SkillToolGroup[]
@@ -355,23 +348,6 @@ export const siteCopy: Record<Language, SiteCopy> = {
       visualTitle: "Skill-Kompass",
       visualHint:
         "Die Nummern 01-05 verweisen auf die Detailkarten darunter.",
-      spotlights: [
-        {
-          label: "Praxisnähe",
-          value: "5/5",
-          body: "Mehrjährige Verantwortung im Filialalltag mit direktem Kunden-, Team- und Prozessbezug.",
-        },
-        {
-          label: "Analyse",
-          value: "5/5",
-          body: "Zahlenverständnis, Struktur und Modellierung als Grundlage für klare Entscheidungen.",
-        },
-        {
-          label: "Digitaler Hebel",
-          value: "4/5",
-          body: "Python, Excel und R als Werkzeuge, um Abläufe zu verbessern und Daten nutzbar zu machen.",
-        },
-      ],
       toolLabel: "Werkzeuge",
       toolTitle: "Stack für klare Umsetzung",
       toolGroups: [
@@ -730,23 +706,6 @@ export const siteCopy: Record<Language, SiteCopy> = {
       visualTitle: "Skill compass",
       visualHint:
         "The numbers 01-05 refer to the detailed cards below.",
-      spotlights: [
-        {
-          label: "Practical relevance",
-          value: "5/5",
-          body: "Several years of responsibility in store operations with direct customer, team and process exposure.",
-        },
-        {
-          label: "Analysis",
-          value: "5/5",
-          body: "Numerical understanding, structure and modeling as a basis for clear decisions.",
-        },
-        {
-          label: "Digital leverage",
-          value: "4/5",
-          body: "Python, Excel and R as tools to improve workflows and make data useful.",
-        },
-      ],
       toolLabel: "Tools",
       toolTitle: "Stack for clear execution",
       toolGroups: [

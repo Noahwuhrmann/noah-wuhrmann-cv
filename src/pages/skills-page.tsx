@@ -30,21 +30,6 @@ export function SkillsPage() {
               <span className="skills-panel-label">{copy.skills.highlightLabel}</span>
               <h2>{copy.skills.highlightTitle}</h2>
               <p>{copy.skills.highlightBody}</p>
-
-              <div className="skills-signal-list">
-                {copy.skills.spotlights.map((spotlight, index) => (
-                  <div
-                    className={`skills-signal-item tone-${(index % 3) + 1}`}
-                    key={spotlight.label}
-                  >
-                    <strong>{spotlight.value}</strong>
-                    <div>
-                      <span>{spotlight.label}</span>
-                      <p>{spotlight.body}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="skills-visual-board">
@@ -71,7 +56,6 @@ export function SkillsPage() {
                   </div>
                 ))}
               </div>
-
             </div>
           </article>
 

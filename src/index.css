@@ -1687,12 +1687,20 @@ button {
 
 .skills-command-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1fr);
   gap: 1.25rem;
+  align-items: stretch;
   padding: 1.45rem;
   background:
     linear-gradient(135deg, rgba(24, 34, 52, 0.78), rgba(8, 12, 20, 0.84) 52%, rgba(24, 18, 39, 0.72)),
     rgba(8, 12, 20, 0.74);
+}
+
+.skills-command-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.4rem 0.15rem;
 }
 
 .skills-command-copy,
@@ -1738,42 +1746,6 @@ button {
   max-width: 650px;
   margin: 1rem 0 0;
   font-size: 1rem;
-}
-
-.skills-signal-list {
-  display: grid;
-  gap: 0.9rem;
-  margin-top: 1.35rem;
-}
-
-.skills-signal-item {
-  --skill-accent-rgb: 101, 216, 255;
-  display: grid;
-  grid-template-columns: minmax(58px, auto) minmax(0, 1fr);
-  gap: 0.9rem;
-  align-items: start;
-  padding-top: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
-}
-
-.skills-signal-item strong {
-  color: rgb(var(--skill-accent-rgb));
-  font-size: 1.12rem;
-  line-height: 1;
-}
-
-.skills-signal-item span {
-  display: block;
-  color: rgba(245, 247, 255, 0.96);
-  font-size: 0.98rem;
-  font-weight: 760;
-  letter-spacing: 0;
-}
-
-.skills-signal-item p {
-  margin: 0.2rem 0 0;
-  font-size: 0.9rem;
-  line-height: 1.45;
 }
 
 .skills-visual-board {
@@ -2849,11 +2821,6 @@ button {
 
   .skills-command-copy > p {
     font-size: 0.94rem;
-  }
-
-  .skills-signal-item {
-    grid-template-columns: 1fr;
-    gap: 0.38rem;
   }
 
   .skills-visual-board {
