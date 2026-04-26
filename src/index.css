@@ -1389,9 +1389,14 @@ button {
 
 .resume-track-card-career {
   background:
-    linear-gradient(180deg, rgba(36, 49, 76, 0.82), rgba(17, 25, 39, 0.72)),
-    rgba(12, 18, 28, 0.52);
+    linear-gradient(180deg, rgba(28, 40, 63, 0.88), rgba(10, 17, 29, 0.82)),
+    rgba(7, 12, 21, 0.72);
   border-color: rgba(118, 170, 255, 0.2);
+}
+
+.resume-track-card-career::before,
+.timeline-row-career::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 36%);
 }
 
 .resume-track-card-career::after,
@@ -1490,8 +1495,8 @@ button {
 
 .timeline-row-career {
   background:
-    linear-gradient(180deg, rgba(36, 49, 76, 0.82), rgba(17, 25, 39, 0.72)),
-    rgba(12, 18, 28, 0.52);
+    linear-gradient(180deg, rgba(28, 40, 63, 0.88), rgba(10, 17, 29, 0.82)),
+    rgba(7, 12, 21, 0.72);
   border-color: rgba(118, 170, 255, 0.2);
 }
 
