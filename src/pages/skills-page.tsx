@@ -51,6 +51,7 @@ export function SkillsPage() {
               {copy.skills.items.map((item, index) => (
                 <div
                   className={`skills-visual-track tone-${(index % 5) + 1}`}
+                  data-skill-title={item.title}
                   key={`${item.title}-visual`}
                   style={getSkillStyle(item.level)}
                 >

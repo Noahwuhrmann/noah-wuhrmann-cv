@@ -1794,10 +1794,49 @@ button {
 
 .skills-visual-track {
   --skill-accent-rgb: 101, 216, 255;
+  position: relative;
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
   gap: 0.72rem;
   align-items: center;
+}
+
+.skills-visual-track::after {
+  content: attr(data-skill-title);
+  position: absolute;
+  left: calc(42px + 0.72rem);
+  bottom: calc(100% + 0.45rem);
+  z-index: 2;
+  max-width: min(22rem, calc(100% - 42px - 0.72rem));
+  padding: 0.44rem 0.7rem;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(23, 29, 42, 0.96), rgba(7, 10, 16, 0.92)),
+    rgba(8, 11, 18, 0.92);
+  border: 1px solid rgba(var(--skill-accent-rgb), 0.28);
+  color: rgba(245, 247, 255, 0.96);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.34),
+    0 0 22px rgba(var(--skill-accent-rgb), 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  font-size: 0.78rem;
+  font-weight: 760;
+  line-height: 1.18;
+  letter-spacing: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transform: translateY(0.25rem) scale(0.98);
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.skills-visual-track:hover::after {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .skills-visual-code {
