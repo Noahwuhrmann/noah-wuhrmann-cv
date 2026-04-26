@@ -1371,6 +1371,10 @@ button {
   box-shadow: none;
 }
 
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-track-card-education .resume-track-placeholder {
+  display: none;
+}
+
 .resume-parallel-grid:not(.education-open) .resume-track-card-career {
   border-top-right-radius: 1.6rem;
   border-bottom-right-radius: 1.6rem;
@@ -1418,6 +1422,10 @@ button {
     rgba(255, 255, 255, 0.02) 100%
   );
   box-shadow: none;
+}
+
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-track-card-career::after {
+  content: none;
 }
 
 .resume-track-card-education h2 {
