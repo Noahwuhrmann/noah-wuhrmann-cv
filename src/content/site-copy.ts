@@ -34,6 +34,23 @@ type SkillItem = {
   title: string
   body: string
   level: number
+  tags: string[]
+}
+
+type SkillSpotlight = {
+  label: string
+  value: string
+  body: string
+}
+
+type SkillToolGroup = {
+  title: string
+  items: string[]
+}
+
+type SkillWorkflowStep = {
+  label: string
+  detail: string
 }
 
 type ProjectItem = {
@@ -100,6 +117,15 @@ export type SiteCopy = {
     }
   }
   skills: PageCopy & {
+    highlightLabel: string
+    highlightTitle: string
+    highlightBody: string
+    spotlights: SkillSpotlight[]
+    toolLabel: string
+    toolTitle: string
+    toolGroups: SkillToolGroup[]
+    workflowLabel: string
+    workflow: SkillWorkflowStep[]
     items: SkillItem[]
   }
   projects: PageCopy & {
@@ -320,31 +346,92 @@ export const siteCopy: Record<Language, SiteCopy> = {
       title: "Kompetenzen mit klarer Gewichtung",
       lead:
         "Meine Stärken verbinden operative Erfahrung, analytisches Denken und ein wachsendes digitales Werkzeugset mit klarem Praxisbezug.",
+      highlightLabel: "Kompetenzprofil",
+      highlightTitle: "Praxis, Analyse und digitale Umsetzung in einem System",
+      highlightBody:
+        "Ich verbinde Verantwortung aus dem operativen Alltag mit methodischem Denken aus dem Studium. Dadurch entstehen Lösungen, die fachlich sauber sind und im echten Arbeitsumfeld funktionieren.",
+      spotlights: [
+        {
+          label: "Praxisnähe",
+          value: "5/5",
+          body: "Mehrjährige Verantwortung im Filialalltag mit direktem Kunden-, Team- und Prozessbezug.",
+        },
+        {
+          label: "Analyse",
+          value: "5/5",
+          body: "Zahlenverständnis, Struktur und Modellierung als Grundlage für klare Entscheidungen.",
+        },
+        {
+          label: "Digitaler Hebel",
+          value: "4/5",
+          body: "Python, Excel und R als Werkzeuge, um Abläufe zu verbessern und Daten nutzbar zu machen.",
+        },
+      ],
+      toolLabel: "Werkzeuge",
+      toolTitle: "Stack für klare Umsetzung",
+      toolGroups: [
+        {
+          title: "Daten",
+          items: ["Python", "Excel", "R", "RStudio"],
+        },
+        {
+          title: "Business",
+          items: ["Prozesse", "KPI-Denken", "Verkauf", "Filialführung"],
+        },
+        {
+          title: "Umsetzung",
+          items: ["Struktur", "Dokumentation", "Automatisierung", "Visualisierung"],
+        },
+      ],
+      workflowLabel: "Arbeitsmodus",
+      workflow: [
+        {
+          label: "Verstehen",
+          detail: "Kontext, Ziel und reale Einschränkungen klären.",
+        },
+        {
+          label: "Strukturieren",
+          detail: "Daten, Prozesse und Abhängigkeiten sauber ordnen.",
+        },
+        {
+          label: "Umsetzen",
+          detail: "Pragmatische Lösungen bauen und iterativ verbessern.",
+        },
+        {
+          label: "Wirksam machen",
+          detail: "Ergebnisse verständlich darstellen und nutzbar machen.",
+        },
+      ],
       items: [
         {
           title: "Wirtschaft und Praxis",
           body: "Operatives Verständnis, Filialalltag, Kundenorientierung, Verantwortungsübernahme und wirtschaftliches Denken aus mehreren Jahren Praxiserfahrung.",
           level: 5,
+          tags: ["Filialführung", "Kundenfokus", "Entscheide"],
         },
         {
           title: "Analyse und Struktur",
           body: "Analytisches Denken, Zahlenverständnis, strukturierte Herangehensweise, Problemlösung und systemisches Denken.",
           level: 5,
+          tags: ["Zahlenverständnis", "Modelle", "Struktur"],
         },
         {
           title: "Digitalisierung und Tools",
           body: "Python, Excel, R, RStudio, Datenaufbereitung, Automatisierungsansätze und die strukturierte Visualisierung von Ergebnissen.",
           level: 4,
+          tags: ["Python", "Excel", "R/RStudio", "Automation"],
         },
         {
           title: "Prozess- und Projektfokus",
           body: "Prozessoptimierung, Praxisbezug, Eigeninitiative, Umsetzungsorientierung und die Verbindung von Theorie und Praxis in konkreten Anwendungsfällen.",
           level: 4,
+          tags: ["Optimierung", "Praxisbezug", "Projektlogik"],
         },
         {
           title: "Persönliche Arbeitsweise",
           body: "Zuverlässig, lernbereit, verantwortungsbewusst, lösungsorientiert, strukturiert und engagiert.",
           level: 5,
+          tags: ["Zuverlässig", "Lernbereit", "Verantwortung"],
         },
       ],
     },
@@ -631,31 +718,92 @@ export const siteCopy: Record<Language, SiteCopy> = {
       title: "Capabilities with visible weighting",
       lead:
         "My strengths combine operational experience, analytical thinking and a growing digital toolkit with a clear practical orientation.",
+      highlightLabel: "Capability profile",
+      highlightTitle: "Practice, analysis and digital execution in one system",
+      highlightBody:
+        "I combine operational responsibility from day-to-day business with methodical thinking from my studies. That creates solutions that are analytically sound and useful in real working environments.",
+      spotlights: [
+        {
+          label: "Practical relevance",
+          value: "5/5",
+          body: "Several years of responsibility in store operations with direct customer, team and process exposure.",
+        },
+        {
+          label: "Analysis",
+          value: "5/5",
+          body: "Numerical understanding, structure and modeling as a basis for clear decisions.",
+        },
+        {
+          label: "Digital leverage",
+          value: "4/5",
+          body: "Python, Excel and R as tools to improve workflows and make data useful.",
+        },
+      ],
+      toolLabel: "Tools",
+      toolTitle: "Stack for clear execution",
+      toolGroups: [
+        {
+          title: "Data",
+          items: ["Python", "Excel", "R", "RStudio"],
+        },
+        {
+          title: "Business",
+          items: ["Processes", "KPI thinking", "Sales", "Store operations"],
+        },
+        {
+          title: "Execution",
+          items: ["Structure", "Documentation", "Automation", "Visualization"],
+        },
+      ],
+      workflowLabel: "Working mode",
+      workflow: [
+        {
+          label: "Understand",
+          detail: "Clarify context, objective and real constraints.",
+        },
+        {
+          label: "Structure",
+          detail: "Organize data, processes and dependencies cleanly.",
+        },
+        {
+          label: "Execute",
+          detail: "Build pragmatic solutions and improve them iteratively.",
+        },
+        {
+          label: "Make useful",
+          detail: "Present outcomes clearly and make them usable.",
+        },
+      ],
       items: [
         {
           title: "Business and practical execution",
           body: "Operational understanding, customer orientation, responsibility in day-to-day business and a strong sense for business realities built through several years of practical experience.",
           level: 5,
+          tags: ["Store operations", "Customer focus", "Decisions"],
         },
         {
           title: "Analysis and structure",
           body: "Analytical thinking, strong comfort with numbers, structured problem-solving and a systematic way of understanding complex situations.",
           level: 5,
+          tags: ["Numeracy", "Models", "Structure"],
         },
         {
           title: "Digitalization and tools",
           body: "Python, Excel, R, RStudio, data preparation, automation approaches and the structured visualization of results.",
           level: 4,
+          tags: ["Python", "Excel", "R/RStudio", "Automation"],
         },
         {
           title: "Process and project focus",
           body: "Process improvement, strong practical relevance, initiative and the ability to connect theory with execution in real use cases.",
           level: 4,
+          tags: ["Optimization", "Practical fit", "Project logic"],
         },
         {
           title: "Personal working style",
           body: "Reliable, eager to learn, responsible, solution-oriented, structured and committed.",
           level: 5,
+          tags: ["Reliable", "Learning", "Responsibility"],
         },
       ],
     },
