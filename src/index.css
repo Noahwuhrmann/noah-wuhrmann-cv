@@ -1000,6 +1000,11 @@ button {
   grid-template-columns: 172px clamp(220px, 22vw, 270px) clamp(320px, 30vw, 392px);
 }
 
+.resume-parallel-grid.tracks-closed {
+  grid-template-columns: 1px clamp(220px, 22vw, 270px) 148px;
+  column-gap: clamp(1.4rem, 4vw, 3.2rem);
+}
+
 .resume-period-header {
   min-height: 78px;
   display: flex;
@@ -1044,6 +1049,20 @@ button {
     rgba(255, 255, 255, 0.05) 42%,
     rgba(255, 255, 255, 0) 100%
   );
+}
+
+.resume-parallel-grid.tracks-closed .resume-period-header span,
+.resume-parallel-grid.tracks-closed .resume-period-cell .timeline-badge {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.resume-parallel-grid.tracks-closed .resume-period-cell {
+  padding-left: 0;
+}
+
+.resume-parallel-grid.tracks-closed .resume-period-cell::after {
+  left: 0;
 }
 
 .resume-track-header,

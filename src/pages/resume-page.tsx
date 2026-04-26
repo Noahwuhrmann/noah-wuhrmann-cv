@@ -80,6 +80,7 @@ export function ResumePage() {
               "resume-parallel-grid",
               isCareerOpen && "career-open",
               isEducationOpen && "education-open",
+              !isCareerOpen && !isEducationOpen && "tracks-closed",
             )}
             id="resume-education-panel"
           >
