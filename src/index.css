@@ -1488,8 +1488,8 @@ button {
 
 .resume-mobile-toggle-career.open {
   background:
-    linear-gradient(180deg, rgba(36, 49, 76, 0.82), rgba(17, 25, 39, 0.72)),
-    rgba(12, 18, 28, 0.52);
+    linear-gradient(180deg, rgba(28, 40, 63, 0.88), rgba(10, 17, 29, 0.82)),
+    rgba(7, 12, 21, 0.72);
   border-color: rgba(118, 170, 255, 0.2);
 }
 
@@ -1500,9 +1500,24 @@ button {
   border-color: rgba(118, 170, 255, 0.2);
 }
 
+.resume-mobile-toggle.resume-mobile-toggle-career,
+.resume-mobile-toggle.resume-mobile-toggle-career.open {
+  background:
+    linear-gradient(180deg, rgba(28, 40, 63, 0.88), rgba(10, 17, 29, 0.82)),
+    rgba(7, 12, 21, 0.72);
+  border-color: rgba(118, 170, 255, 0.2);
+}
+
 .resume-mobile-education-panel {
   display: grid;
   gap: 1rem;
+}
+
+.resume-mobile-education-panel .timeline-row {
+  background:
+    linear-gradient(180deg, rgba(43, 38, 74, 0.82), rgba(17, 17, 31, 0.72)),
+    rgba(15, 15, 26, 0.52);
+  border-color: rgba(175, 158, 255, 0.2);
 }
 
 .resume-mobile-career-panel[hidden],
