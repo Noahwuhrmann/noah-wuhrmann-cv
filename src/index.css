@@ -1380,6 +1380,10 @@ button {
   gap: 1rem;
 }
 
+.resume-mobile-education-panel[hidden] {
+  display: none;
+}
+
 .resume-logo-band-section {
   margin-top: 1.6rem;
   padding-bottom: 0.25rem;
