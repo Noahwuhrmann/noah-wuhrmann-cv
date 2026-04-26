@@ -76,16 +76,34 @@ export function ResumePage() {
 
         <div className="resume-desktop-layout">
           <div
-            className={cn("resume-parallel-grid", isEducationOpen && "education-open")}
+            className={cn(
+              "resume-parallel-grid",
+              isCareerOpen && "career-open",
+              isEducationOpen && "education-open",
+            )}
             id="resume-education-panel"
           >
             <div className="resume-period-header">
               <span>{copy.resume.labels.period}</span>
             </div>
 
-            <div className="resume-track-header">
-              <span>{copy.resume.labels.career}</span>
-            </div>
+            <button
+              aria-controls="resume-education-panel"
+              aria-expanded={isCareerOpen}
+              className={cn("resume-track-header resume-career-toggle", isCareerOpen && "open")}
+              onClick={() => setIsCareerOpen((open) => !open)}
+              type="button"
+            >
+              <span className="resume-career-toggle-title">
+                {copy.resume.labels.career}
+              </span>
+              <span className="resume-career-toggle-hint">
+                {isCareerOpen
+                  ? copy.resume.labels.collapse
+                  : copy.resume.labels.expand}
+              </span>
+              <span className="resume-education-toggle-chevron" aria-hidden="true" />
+            </button>
 
             <button
               aria-controls="resume-education-panel"
