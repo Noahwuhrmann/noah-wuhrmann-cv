@@ -1000,8 +1000,9 @@ button {
   grid-template-columns: 172px clamp(220px, 22vw, 270px) clamp(320px, 30vw, 392px);
 }
 
-.resume-parallel-grid.tracks-closed {
-  grid-template-columns: 1px clamp(220px, 22vw, 270px) 148px;
+.resume-parallel-grid.tracks-closed,
+.resume-parallel-grid:not(.career-open):not(.education-open) {
+  grid-template-columns: 0 clamp(220px, 22vw, 270px) 148px;
   column-gap: clamp(1.4rem, 4vw, 3.2rem);
 }
 
@@ -1051,18 +1052,27 @@ button {
   );
 }
 
-.resume-parallel-grid.tracks-closed .resume-period-header span,
-.resume-parallel-grid.tracks-closed .resume-period-cell .timeline-badge {
-  opacity: 0;
+.resume-parallel-grid.tracks-closed .resume-period-header,
+.resume-parallel-grid.tracks-closed .resume-period-cell,
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-period-header,
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-period-cell {
+  min-width: 0;
+  width: 0;
+  padding: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.resume-parallel-grid.tracks-closed .resume-period-cell {
-  padding-left: 0;
+.resume-parallel-grid.tracks-closed .resume-period-header span,
+.resume-parallel-grid.tracks-closed .resume-period-cell .timeline-badge,
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-period-header span,
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-period-cell .timeline-badge {
+  display: none;
 }
 
-.resume-parallel-grid.tracks-closed .resume-period-cell::after {
-  left: 0;
+.resume-parallel-grid.tracks-closed .resume-period-cell::after,
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-period-cell::after {
+  content: none;
 }
 
 .resume-track-header,
