@@ -1002,8 +1002,8 @@ button {
 
 .resume-parallel-grid.tracks-closed,
 .resume-parallel-grid:not(.career-open):not(.education-open) {
-  grid-template-columns: 0 clamp(220px, 22vw, 270px) 148px;
-  column-gap: clamp(1.4rem, 4vw, 3.2rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 1.1rem;
 }
 
 .resume-period-header {
@@ -1076,8 +1076,10 @@ button {
 }
 
 .resume-parallel-grid.tracks-closed .resume-period-cell,
+.resume-parallel-grid.tracks-closed .resume-period-header,
 .resume-parallel-grid.tracks-closed .resume-track-card,
 .resume-parallel-grid:not(.career-open):not(.education-open) .resume-period-cell,
+.resume-parallel-grid:not(.career-open):not(.education-open) .resume-period-header,
 .resume-parallel-grid:not(.career-open):not(.education-open) .resume-track-card {
   display: none;
 }
