@@ -223,11 +223,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
           period: "2024 - 2028",
           career: {
             title: "Stellvertretender Filialleiter, Teilzeit · Taurus Sports AG, Kloten",
-            body: "Aktuelle Teilzeitrolle parallel zum Bachelorstudium mit Verantwortung im operativen Alltag und aktiver Mitarbeit in der Filialführung.",
+            body: "Aktuelle Teilzeitrolle parallel zum Bachelorstudium: weiterhin stellvertretender Filialleiter, inzwischen mit Einsätzen in verschiedenen Bereichen des Unternehmens.",
             bullets: [
-              "Mitarbeit in der Filialführung und im Tagesgeschäft",
-              "Praxisnahe Verantwortung parallel zum Studium",
-              "Verbindung von Umsetzung, Wirtschaftlichkeit und Teamalltag",
+              "Weiterhin Verantwortung in der Filiale und im Tagesgeschäft",
+              "Mitarbeit im Büro bei alltäglichen administrativen Aufgaben",
+              "Flexible Unterstützung dort, wo im Unternehmen gerade Bedarf besteht",
             ],
           },
           education: {
@@ -236,7 +236,6 @@ export const siteCopy: Record<Language, SiteCopy> = {
             bullets: [
               "Vertiefung Wirtschaftsmathematik",
               "Fokus auf Analyse, Modellierung und wirtschaftliche Zusammenhänge",
-              "Paralleler Aufbau von Studienwissen und Praxiserfahrung",
             ],
           },
         },
@@ -253,12 +252,12 @@ export const siteCopy: Record<Language, SiteCopy> = {
             ],
           },
           education: {
-            title: "Berufsmaturität, Technik, Architektur, Life Sciences · Bildungszentrum Uster",
-            body: "Berufsbegleitende Weiterbildung mit starker analytischer und mathematischer Grundlage als Brücke zum anschliessenden Studium.",
+            title: "Berufsmaturität (Technik, Architektur, Life Sciences) · Bildungszentrum Uster",
+            body: "Berufsbegleitende Berufsmaturität als Vorbereitung auf das anschliessende Studium an der Fachhochschule.",
             bullets: [
-              "Ausbau mathematischer und analytischer Kompetenzen",
-              "Vertiefte Auseinandersetzung mit technischen Zusammenhängen",
-              "Fundament für das Studium im Wirtschaftsingenieurwesen",
+              "Abschluss Berufsmaturität Technik (TALS)",
+              "Weiterbildung parallel zur Teilzeitstelle",
+              "Vorbereitung auf das anschliessende Studium",
             ],
           },
         },
@@ -267,11 +266,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
           period: "2019 - 2022",
           career: {
             title: "Stellvertretender Filialleiter, Vollzeit · Taurus Sports AG, Kloten",
-            body: "Vollzeitfunktion mit operativer Verantwortung und aktiver Mitarbeit in der Filialführung.",
+            body: "Vollzeitfunktion in der Filialführung mit Verantwortung im Tagesgeschäft, in der Abteilung Running, im Einkauf und in der Schulung des Teams.",
             bullets: [
-              "Verantwortung im Filialalltag und in der Organisation",
-              "Praxisnahe Führungserfahrung im Sportdetailhandel",
-              "Direkte Arbeit an Abläufen, Kundenorientierung und Umsetzung",
+              "Verantwortung für die Abteilung Running inklusive Planung und Durchführung des Einkaufs",
+              "Unterstützung des Einkaufs in weiteren Bereichen",
+              "Betreuung von Lernenden und Schulung des Personals",
             ],
           },
         },
@@ -578,11 +577,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
           period: "2024 - 2028",
           career: {
             title: "Deputy Store Manager, part-time · Taurus Sports AG, Kloten",
-            body: "Current part-time role alongside my bachelor's studies with responsibility in daily operations and active involvement in store leadership.",
+            body: "Current part-time role alongside my bachelor's studies: still Deputy Store Manager, now also supporting different areas across the company.",
             bullets: [
-              "Involvement in store leadership and day-to-day operations",
-              "Practical responsibility alongside academic development",
-              "Strong combination of execution, business thinking and team collaboration",
+              "Continued responsibility in store operations and day-to-day business",
+              "Office support with everyday administrative tasks",
+              "Flexible support wherever the company currently needs help",
             ],
           },
           education: {
@@ -591,7 +590,6 @@ export const siteCopy: Record<Language, SiteCopy> = {
             bullets: [
               "Specialization in business mathematics",
               "Focus on analysis, modeling and business-related systems",
-              "Parallel development of academic knowledge and practical experience",
             ],
           },
         },
@@ -608,12 +606,12 @@ export const siteCopy: Record<Language, SiteCopy> = {
             ],
           },
           education: {
-            title: "Professional Baccalaureate in Technology, Architecture and Life Sciences · Bildungszentrum Uster",
-            body: "Further education with a strong analytical and mathematical foundation that prepared the way for my subsequent degree program.",
+            title: "Professional Baccalaureate (Technology, Architecture and Life Sciences) · Bildungszentrum Uster",
+            body: "Part-time professional baccalaureate completed alongside work as preparation for the subsequent university of applied sciences degree.",
             bullets: [
-              "Expansion of mathematical and analytical skills",
-              "Deeper engagement with technical contexts",
-              "Foundation for studying Industrial Engineering",
+              "Completed Professional Baccalaureate Technology (TALS)",
+              "Further education alongside the part-time role",
+              "Preparation for the subsequent degree program",
             ],
           },
         },
@@ -622,11 +620,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
           period: "2019 - 2022",
           career: {
             title: "Deputy Store Manager, full-time · Taurus Sports AG, Kloten",
-            body: "Full-time position with operational responsibility and active participation in store management.",
+            body: "Full-time store management role with responsibility in day-to-day operations, the Running department, purchasing and team training.",
             bullets: [
-              "Responsibility for store operations and organization",
-              "Hands-on leadership experience in sports retail",
-              "Direct involvement in processes, customer orientation and execution",
+              "Responsibility for the Running department, including planning and purchasing",
+              "Support with purchasing in other product areas",
+              "Supervision of apprentices and training of staff",
             ],
           },
         },
