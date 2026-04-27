@@ -24,8 +24,8 @@ export function AboutPage() {
         </div>
 
         <div className="compact-grid">
-          {copy.about.cards.map((card) => (
-            <article className="content-card" key={card.title}>
+          {copy.about.cards.map((card, index) => (
+            <article className={index === 3 ? "content-card about-private-card" : "content-card"} key={card.title}>
               <h2>{card.title}</h2>
               <p>{card.body}</p>
             </article>

@@ -203,6 +203,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
           body:
             "Mich interessieren Prozessoptimierung, datenbasierte Entscheidungen, Automatisierung, künstliche Intelligenz und digitale Lösungen mit echtem Nutzen. Ich suche Einstiegsmöglichkeiten, in denen ich Theorie und Praxis sinnvoll verbinden und Verantwortung übernehmen kann.",
         },
+        {
+          title: "Privat",
+          body:
+            "Neben Studium und Arbeit ist mir meine Familie sehr wichtig. In meiner Freizeit beschäftige ich mich gerne mit persönlichen Finanzen, Investments sowie Kryptowährungen und den dahinterliegenden Technologien. Besonders spannend finde ich dabei die Verbindung von langfristigem Denken, digitaler Innovation und wirtschaftlichen Zusammenhängen. Ausgleich finde ich beim Kochen und bei der Zeit mit Freunden, wo der persönliche Austausch und gemeinsame Erlebnisse im Vordergrund stehen.",
+        },
       ],
     },
     resume: {
@@ -594,6 +599,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
           title: "What I am interested in",
           body:
             "I am particularly interested in process improvement, data-driven decisions, automation, artificial intelligence and digital solutions with real value. I am looking for entry-level opportunities where I can connect theory and practice and take on responsibility.",
+        },
+        {
+          title: "Personal",
+          body:
+            "Outside my studies and work, my family is very important to me. In my free time, I enjoy personal finance, investments, cryptocurrencies and the technologies behind them. I find the connection between long-term thinking, digital innovation and economic contexts especially interesting. Cooking and spending time with friends give me balance, with personal exchange and shared experiences at the center.",
         },
       ],
     },

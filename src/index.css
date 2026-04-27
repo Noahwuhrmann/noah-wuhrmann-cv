@@ -948,6 +948,14 @@ button {
   margin-bottom: 0.7rem;
 }
 
+.about-private-card {
+  grid-column: 1 / -1;
+}
+
+.about-private-card p {
+  max-width: 72rem;
+}
+
 .timeline-grid {
   display: grid;
   gap: 1rem;
