@@ -43,9 +43,7 @@ export function HomeHero() {
       <div className="home-hero-shell">
         <div className="hero-name-stage">
           <div className="hero-title-haze" aria-hidden="true" />
-          <h1 className="hero-title">
-            <span>Noah Wuhrmann</span>
-          </h1>
+          <h1 className="hero-title">Noah Wuhrmann</h1>
         </div>
       </div>
     </section>

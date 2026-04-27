@@ -563,6 +563,7 @@ button {
   position: relative;
   z-index: 3;
   margin: 0;
+  color: transparent;
   font-size: clamp(4.2rem, 10.8vw, 8.85rem);
   font-weight: 780;
   line-height: 0.96;
@@ -570,10 +571,6 @@ button {
   text-align: center;
   text-wrap: balance;
   transform: translateY(clamp(-1rem, -4vh, -2.7rem));
-}
-
-.hero-title span {
-  color: transparent;
   background: linear-gradient(180deg, #ffffff 0%, #d4e4ff 46%, #8bb8ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
