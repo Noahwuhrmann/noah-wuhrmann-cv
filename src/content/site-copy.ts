@@ -280,11 +280,10 @@ export const siteCopy: Record<Language, SiteCopy> = {
           period: "2019",
           career: {
             title: "Schweizer Armee · Rekrut und Soldat",
-            body: "Militärdienst zwischen Ausbildung und nächster beruflicher Station in einem strukturierten und fordernden Umfeld.",
+            body: "Rekrutenschule als Fahrer C1 in der Infanterieschule 11.",
             bullets: [
               "Rekrut von Juni bis September 2019",
               "Anschliessend Soldat bis Oktober 2019",
-              "Erfahrung in einem klar strukturierten Umfeld mit hoher Verbindlichkeit",
             ],
           },
         },
@@ -297,7 +296,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
             bullets: [
               "Kundennahe Verantwortung im Tagesgeschäft",
               "Vertieftes Verständnis für Produkte, Beratung und Verkaufsprozesse",
-              "Weiterentwicklung der Praxisbasis im operativen Umfeld",
+              "Weiterentwicklung der Praxisbasis",
             ],
           },
         },
@@ -306,20 +305,18 @@ export const siteCopy: Record<Language, SiteCopy> = {
           period: "2015 - 2018",
           career: {
             title: "Lehre als Detailhandelsfachmann EFZ · Taurus Sports AG",
-            body: "Berufseinstieg mit fundierter praktischer Ausbildung im Sportdetailhandel und frühem Aufbau von Verlässlichkeit, Praxisnähe und Kundenorientierung.",
+            body: "Ausbildung im Sportdetailhandel mit direktem Kundenkontakt, Beratung und Mitarbeit im Tagesgeschäft.",
             bullets: [
-              "Kombination aus Praxisbetrieb und schulischer Ausbildung",
-              "Frühe Verantwortung im direkten Kundenumfeld",
-              "Aufbau einer belastbaren operativen Basis",
+              "Kundenkontakt und Beratung im Verkauf",
+              "Mitarbeit bei Warenpräsentation und Tagesgeschäft",
+              "Praktische Ausbildung im Sportdetailhandel",
             ],
           },
           education: {
             title: "Berufsschule für Detailhandel Zürich · Detailhandelsfachmann EFZ, Sport",
             body: "Schulischer Ausbildungsweg parallel zur Lehre mit Abschluss als Detailhandelsfachmann EFZ im Bereich Sport.",
             bullets: [
-              "Berufsschulische Grundlage parallel zur Praxisausbildung",
               "Abschluss Detailhandelsfachmann EFZ, Sport",
-              "Verbindung von Fachwissen, Praxis und Verlässlichkeit",
             ],
           },
         },
@@ -638,11 +635,10 @@ export const siteCopy: Record<Language, SiteCopy> = {
           period: "2019",
           career: {
             title: "Swiss Armed Forces · Recruit and Soldier",
-            body: "Military service between my apprenticeship and my next professional role in a structured and demanding environment.",
+            body: "Recruit school as a C1 driver at Infantry School 11.",
             bullets: [
               "Recruit from June to September 2019",
               "Continued service as a soldier until October 2019",
-              "Experience in a highly structured environment with clear accountability",
             ],
           },
         },
@@ -655,7 +651,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
             bullets: [
               "Customer-facing responsibility in day-to-day business",
               "Deeper understanding of products, consulting and sales processes",
-              "Continued development of a strong practical foundation",
+              "Continued development of the practical foundation",
             ],
           },
         },
@@ -664,20 +660,18 @@ export const siteCopy: Record<Language, SiteCopy> = {
           period: "2015 - 2018",
           career: {
             title: "Apprenticeship as Certified Retail Specialist EFZ · Taurus Sports AG",
-            body: "Professional starting point with solid hands-on training in sports retail and an early foundation in reliability, customer orientation and practical execution.",
+            body: "Apprenticeship in sports retail with direct customer contact, consulting and day-to-day store work.",
             bullets: [
-              "Combination of practical training and vocational education",
-              "Early responsibility in a customer-facing environment",
-              "Built a reliable operational foundation",
+              "Customer contact and sales consulting",
+              "Support with product presentation and daily store tasks",
+              "Practical training in sports retail",
             ],
           },
           education: {
             title: "Vocational School of Retail Zurich · Certified Retail Specialist EFZ, Sports",
             body: "School-based education alongside the apprenticeship, completed with the EFZ qualification in sports retail.",
             bullets: [
-              "Vocational school foundation parallel to practical training",
               "Graduated as Certified Retail Specialist EFZ in sports retail",
-              "Connected specialist knowledge with day-to-day practice",
             ],
           },
         },
