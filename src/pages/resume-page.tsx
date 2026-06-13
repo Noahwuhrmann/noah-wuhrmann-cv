@@ -5,6 +5,7 @@ import bfsuLogo from "@/assets/logos/bfsu.png"
 import milLogo from "@/assets/logos/mil.png"
 import tauLogo from "@/assets/logos/tau.png"
 import zhawLogo from "@/assets/logos/zhaw.png"
+import { Reveal } from "@/components/ui/reveal"
 import { useLanguage } from "@/lib/language-context"
 import { cn } from "@/lib/utils"
 
@@ -66,15 +67,20 @@ export function ResumePage() {
   const logoItems = [...copy.resume.logoBand.items, ...copy.resume.logoBand.items]
 
   return (
-    <section className="page-view">
-      <div className="container">
-        <div className="page-header glass-panel">
-          <span className="eyebrow">{copy.resume.eyebrow}</span>
-          <h1 className="page-title">{copy.resume.title}</h1>
-          <p className="page-lead">{copy.resume.lead}</p>
+    <>
+      <section className="subpage-hero">
+        <div className="container">
+          <Reveal className="subpage-hero__inner">
+            <span className="eyebrow">{copy.resume.eyebrow}</span>
+            <h1 className="page-title">{copy.resume.title}</h1>
+            <p className="page-lead">{copy.resume.lead}</p>
+          </Reveal>
         </div>
+      </section>
 
-        <div className="resume-desktop-layout">
+      <section className="page-section resume-section">
+        <div className="container">
+          <div className="resume-desktop-layout">
           <div
             className={cn(
               "resume-parallel-grid",
@@ -254,7 +260,12 @@ export function ResumePage() {
           </section>
         </div>
 
-        <section className="resume-logo-band-section" aria-labelledby="resume-logo-band-label">
+        </div>
+      </section>
+
+      <section className="page-section page-section--muted">
+        <div className="container">
+          <Reveal as="section" className="resume-logo-band-section" aria-labelledby="resume-logo-band-label">
           <div className="resume-logo-band-shell">
             <div className="resume-logo-band-label">
               <p id="resume-logo-band-label">{copy.resume.logoBand.label}</p>
@@ -296,8 +307,9 @@ export function ResumePage() {
               </div>
             </div>
           </div>
-        </section>
-      </div>
-    </section>
+          </Reveal>
+        </div>
+      </section>
+    </>
   )
 }

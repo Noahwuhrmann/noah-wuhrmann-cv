@@ -1,34 +1,49 @@
+import { Icon, type IconName } from "@/components/ui/icons"
+import { Reveal } from "@/components/ui/reveal"
 import { useLanguage } from "@/lib/language-context"
+
+const projectIcons: IconName[] = ["image", "cart", "wave"]
 
 export function ProjectsPage() {
   const { copy } = useLanguage()
 
   return (
-    <section className="page-view">
-      <div className="container">
-        <div className="page-header glass-panel">
-          <span className="eyebrow">{copy.projects.eyebrow}</span>
-          <h1 className="page-title">{copy.projects.title}</h1>
-          <p className="page-lead">{copy.projects.lead}</p>
+    <>
+      <section className="subpage-hero">
+        <div className="container">
+          <Reveal className="subpage-hero__inner">
+            <span className="eyebrow">{copy.projects.eyebrow}</span>
+            <h1 className="page-title">{copy.projects.title}</h1>
+            <p className="page-lead">{copy.projects.lead}</p>
+          </Reveal>
         </div>
+      </section>
 
-        <div className="compact-grid">
-          {copy.projects.items.map((item) => (
-            <article className="content-card project-card-page" key={item.label}>
-              <span className="project-badge">{item.label}</span>
-              <h2>{item.title}</h2>
-              <p>{item.body}</p>
-              <div className="tag-list">
-                {item.tags.map((tag) => (
-                  <span className="tag" key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
+      <section className="page-section">
+        <div className="container">
+          <div className="compact-grid">
+            {copy.projects.items.map((item, index) => (
+              <Reveal key={item.label} delay={index * 90}>
+                <article className="content-card info-card project-card-page">
+                  <div className="info-card__top">
+                    <Icon name={projectIcons[index] ?? "image"} />
+                    <span className="step-num">{item.label}</span>
+                  </div>
+                  <h2>{item.title}</h2>
+                  <p>{item.body}</p>
+                  <div className="tag-list">
+                    {item.tags.map((tag) => (
+                      <span className="tag" key={tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

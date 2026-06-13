@@ -91,8 +91,21 @@ export type SiteCopy = {
     heroTagline: string
     marqueeLabel: string
     marqueeItems: string[]
+    solutions: {
+      kicker: string
+      title: string
+      body: string
+      points: string[]
+      cta: string
+      ctaHref: string
+      note: string
+    }
   }
   about: PageCopy & {
+    profileLabel: string
+    traits: string[]
+    detailLabel: string
+    detailTitle: string
     cards: TextBlock[]
   }
   resume: PageCopy & {
@@ -121,12 +134,19 @@ export type SiteCopy = {
     toolGroups: SkillToolGroup[]
     workflowLabel: string
     workflow: SkillWorkflowStep[]
+    detailLabel: string
+    detailTitle: string
     items: SkillItem[]
   }
   projects: PageCopy & {
     items: ProjectItem[]
   }
   contact: PageCopy & {
+    directLabel: string
+    panelTitle: string
+    panelCta: string
+    availabilityLabel: string
+    availabilityTitle: string
     methods: ContactMethod[]
     availability: AvailabilityItem[]
   }
@@ -181,12 +201,35 @@ export const siteCopy: Record<Language, SiteCopy> = {
         "Operative Verantwortung",
         "Praxisbezug",
       ],
+      solutions: {
+        kicker: "Eigenes Projekt",
+        title: "Wuhrmann Solutions",
+        body:
+          "Unter dem Namen Wuhrmann Solutions entwickle ich individuelle Softwarelösungen, die wiederkehrende manuelle Arbeit in klare digitale Abläufe verwandeln. Hier verbinde ich wirtschaftliches Denken mit technischem Interesse zu konkreten Werkzeugen für den Alltag.",
+        points: [
+          "Individuell entwickelte Lösungen",
+          "Fokus auf Prozesse und Automatisierung",
+          "Praxisnah und verständlich umgesetzt",
+        ],
+        cta: "Meine Projekte ansehen",
+        ctaHref: "/projects",
+        note: "Eigene Website in Kürze verfügbar",
+      },
     },
     about: {
       eyebrow: "Über mich",
       title: "Praxisorientiertes Profil an der Schnittstelle von Wirtschaft, Technik und Analyse",
       lead:
         "Ich verbinde Studium, operative Verantwortung und Eigeninitiative in digitalen Themen zu einem Profil, das analytisch denkt und pragmatisch umsetzt.",
+      profileLabel: "Im Überblick",
+      traits: [
+        "Analytisch & strukturiert",
+        "Praxisnah & umsetzungsstark",
+        "Lösungsorientiert",
+        "Digital- & datenaffin",
+      ],
+      detailLabel: "Mehr über mich",
+      detailTitle: "Hintergrund, Haltung und Interessen",
       cards: [
         {
           title: "Wer ich bin",
@@ -392,6 +435,8 @@ export const siteCopy: Record<Language, SiteCopy> = {
           detail: "Ergebnisse verständlich darstellen und nutzbar machen.",
         },
       ],
+      detailLabel: "Im Detail",
+      detailTitle: "Kompetenzen im Detail",
       items: [
         {
           title: "Wirtschaftliches Praxisverständnis",
@@ -489,6 +534,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
       title: "Direkt und unkompliziert erreichbar",
       lead:
         "Ich freue mich über den Austausch zu Einstiegsmöglichkeiten, spannenden Projekten und Rollen an der Schnittstelle von Wirtschaft, Technik und Analyse.",
+      directLabel: "Direkt erreichbar",
+      panelTitle: "Schreib mir direkt",
+      panelCta: "E-Mail schreiben",
+      availabilityLabel: "Zusammenarbeit",
+      availabilityTitle: "Wonach ich suche",
       methods: [
         {
           label: "E-Mail",
@@ -578,12 +628,35 @@ export const siteCopy: Record<Language, SiteCopy> = {
         "Operational Responsibility",
         "Practical Execution",
       ],
+      solutions: {
+        kicker: "Own venture",
+        title: "Wuhrmann Solutions",
+        body:
+          "Under the name Wuhrmann Solutions, I build individual software solutions that turn repetitive manual work into clear digital workflows. It is where my business thinking and technical curiosity come together in concrete, everyday tools.",
+        points: [
+          "Individually developed solutions",
+          "Focused on processes and automation",
+          "Practical and easy to understand",
+        ],
+        cta: "View my projects",
+        ctaHref: "/projects",
+        note: "Dedicated website coming soon",
+      },
     },
     about: {
       eyebrow: "About",
       title: "A practice-oriented profile at the intersection of business, technology and analysis",
       lead:
         "I combine academic development, operational responsibility and initiative in digital topics into a profile that thinks analytically and works in a pragmatic, implementation-oriented way.",
+      profileLabel: "At a glance",
+      traits: [
+        "Analytical & structured",
+        "Practical & execution-driven",
+        "Solution-oriented",
+        "Digital & data-minded",
+      ],
+      detailLabel: "More about me",
+      detailTitle: "Background, approach and interests",
       cards: [
         {
           title: "Who I am",
@@ -789,6 +862,8 @@ export const siteCopy: Record<Language, SiteCopy> = {
           detail: "Present outcomes clearly and make them usable.",
         },
       ],
+      detailLabel: "In detail",
+      detailTitle: "Capabilities in detail",
       items: [
         {
           title: "Practical business understanding",
@@ -886,6 +961,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
       title: "Easy to reach and clear to read",
       lead:
         "I am happy to connect about entry-level opportunities, interesting projects and roles at the intersection of business, technology and analysis.",
+      directLabel: "Direct channels",
+      panelTitle: "Write to me directly",
+      panelCta: "Write an email",
+      availabilityLabel: "Collaboration",
+      availabilityTitle: "What I'm looking for",
       methods: [
         {
           label: "Email",

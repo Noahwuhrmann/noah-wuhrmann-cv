@@ -2,6 +2,10 @@ import { useEffect, useState } from "react"
 
 import { SparklesCore } from "@/components/ui/sparkles"
 
+// Brand colours (Wuhrmann Solutions visual language): cyan, teal and blue,
+// with a touch of near-white so the field keeps its sparkle.
+const sparkleColors = ["#59d9ff", "#42e2c3", "#51a8ff", "#8ee9da", "#eaf7ff"]
+
 export function HomeHero() {
   const [isMobile, setIsMobile] = useState(false)
 
@@ -30,9 +34,9 @@ export function HomeHero() {
               background="transparent"
               minSize={isMobile ? 0.2 : 0.24}
               maxSize={isMobile ? 0.9 : 1.4}
-              particleDensity={isMobile ? 260 : 980}
+              particleDensity={isMobile ? 240 : 760}
               className="sparkles-canvas"
-              particleColor="#FFFFFF"
+              particleColor={sparkleColors}
               speed={isMobile ? 0.28 : 0.36}
             />
           </div>
