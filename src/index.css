@@ -184,7 +184,7 @@ button {
   top: 0;
   width: 100%;
   z-index: 30;
-  padding: 0.85rem 0 0;
+  padding: calc(0.85rem + 1px) 0 0;
 }
 
 .site-header-home {
@@ -270,6 +270,101 @@ button {
 .page-shell-home .nav-link.active::after {
   opacity: 0;
   transform: scaleX(0.4);
+}
+
+.page-shell:not(.page-shell-home) .site-header {
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  padding: calc(0.85rem + 1px) 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(6, 8, 13, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.page-shell:not(.page-shell-home) .nav-shell {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(1.25rem, 2.4vw, 3rem);
+  min-height: 4.5rem;
+  padding: 0.9rem 0;
+  border-bottom: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.page-shell:not(.page-shell-home) .nav-shell::after {
+  content: none;
+}
+
+.page-shell:not(.page-shell-home) .nav-links-desktop {
+  position: relative;
+  isolation: isolate;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.35rem, 2.6vw, 3rem);
+  margin-left: 1px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.page-shell:not(.page-shell-home) .nav-links-desktop::before {
+  position: absolute;
+  inset: -0.55rem -1.45rem;
+  z-index: -1;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.page-shell:not(.page-shell-home) .nav-link {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  min-height: auto;
+  padding: 0.45rem 0;
+  border-radius: 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  font-weight: inherit;
+  line-height: inherit;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.page-shell:not(.page-shell-home) .nav-link::before {
+  position: absolute;
+  inset: 0.08rem -1rem;
+  z-index: -1;
+  content: "";
+  border-radius: 999px;
+  background: transparent;
+  transition: background-color 180ms ease;
+}
+
+.page-shell:not(.page-shell-home) .nav-link::after {
+  content: none;
+}
+
+.page-shell:not(.page-shell-home) .nav-link:hover,
+.page-shell:not(.page-shell-home) .nav-link:focus-visible,
+.page-shell:not(.page-shell-home) .nav-link.active {
+  color: var(--text);
+  background: transparent;
+}
+
+.page-shell:not(.page-shell-home) .nav-link:hover::before,
+.page-shell:not(.page-shell-home) .nav-link:focus-visible::before,
+.page-shell:not(.page-shell-home) .nav-link.active::before {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .nav-shell::after {
@@ -1145,8 +1240,8 @@ button {
 
 /* Contact: methods + brand email panel */
 .contact-split {
-  grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.96fr);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.72fr);
+  align-items: center;
 }
 
 .contact-methods-col {
@@ -1168,6 +1263,11 @@ button {
 
 .contact-brand-panel .section-title {
   font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+}
+
+.contact-brand-panel {
+  width: min(100%, 34rem);
+  justify-self: center;
 }
 
 .contact-brand-panel .liquid-button {
@@ -1195,6 +1295,15 @@ button {
 
 .skills-workflow-step .icon-3d {
   margin-bottom: 0.7rem;
+}
+
+.skills-workflow-step .icon-3d svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  overflow: visible;
+  transform: translate(-50%, -50%);
 }
 
 .skills-workflow-step > span {
@@ -2786,6 +2895,10 @@ button {
   }
 
   .nav-links-desktop {
+    display: none;
+  }
+
+  .page-shell:not(.page-shell-home) .nav-links-desktop {
     display: none;
   }
 
