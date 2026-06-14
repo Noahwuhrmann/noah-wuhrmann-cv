@@ -2501,18 +2501,16 @@ button {
 
 .skills-tool-clusters {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 0.7rem;
   margin-top: 1.2rem;
 }
 
 .skills-tool-cluster {
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
-}
-
-.skills-tool-cluster:first-child {
-  padding-top: 0;
-  border-top: 0;
+  padding: 0.85rem 0.9rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 0.85rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
 }
 
 .skills-tool-cluster h3 {
@@ -2615,7 +2613,9 @@ button {
 }
 
 .skill-card-page:nth-child(1),
-.skill-card-page:nth-child(2) {
+.skill-card-page:nth-child(2),
+.skill-card-page:nth-last-child(1),
+.skill-card-page:nth-last-child(2) {
   grid-column: span 3;
   min-height: 19.5rem;
 }

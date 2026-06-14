@@ -401,7 +401,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
         },
         {
           title: "Umsetzung und Automatisierung",
-          items: ["Streamlit", "VS Code", "N8N"],
+          items: ["GitHub", "VS Code", "N8N", "Eigener Server"],
         },
         {
           title: "Business und Organisation",
@@ -535,10 +535,10 @@ export const siteCopy: Record<Language, SiteCopy> = {
       lead:
         "Ich freue mich über den Austausch zu Einstiegsmöglichkeiten, spannenden Projekten und Rollen an der Schnittstelle von Wirtschaft, Technik und Analyse.",
       directLabel: "Direkt erreichbar",
-      panelTitle: "Schreib mir direkt",
+      panelTitle: "Schreiben Sie mir direkt",
       panelCta: "E-Mail schreiben",
       availabilityLabel: "Zusammenarbeit",
-      availabilityTitle: "Wonach ich suche",
+      availabilityTitle: "Auf einen Blick",
       methods: [
         {
           label: "E-Mail",
@@ -566,8 +566,8 @@ export const siteCopy: Record<Language, SiteCopy> = {
       ],
       availability: [
         {
-          title: "Offen für",
-          body: "Einstiegsrollen, Werkstudententätigkeiten und spannende Aufgaben mit Praxisbezug.",
+          title: "Interessen",
+          body: "Daten, Finanzen und Automatisierung – mich begeistern Themen, bei denen Analyse, Zahlen und smarte Prozesse zusammenkommen.",
         },
         {
           title: "Profil",
@@ -828,7 +828,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
         },
         {
           title: "Execution and automation",
-          items: ["Streamlit", "VS Code", "N8N"],
+          items: ["GitHub", "VS Code", "N8N", "Self-hosting"],
         },
         {
           title: "Business and organization",
@@ -965,7 +965,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
       panelTitle: "Write to me directly",
       panelCta: "Write an email",
       availabilityLabel: "Collaboration",
-      availabilityTitle: "What I'm looking for",
+      availabilityTitle: "At a glance",
       methods: [
         {
           label: "Email",
@@ -993,8 +993,8 @@ export const siteCopy: Record<Language, SiteCopy> = {
       ],
       availability: [
         {
-          title: "Open to",
-          body: "Entry-level roles, working student opportunities and meaningful responsibilities with a practical focus.",
+          title: "Interests",
+          body: "Data, finance and automation – I am drawn to topics where analysis, numbers and smart processes come together.",
         },
         {
           title: "Profile",
