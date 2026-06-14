@@ -8,19 +8,31 @@ const sparkleColors = ["#59d9ff", "#42e2c3", "#51a8ff", "#8ee9da", "#eaf7ff"]
 
 export function HomeHero() {
   const [isMobile, setIsMobile] = useState(false)
+  const [isMobilePortrait, setIsMobilePortrait] = useState(false)
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 767px)")
+    const mobileQuery = window.matchMedia("(max-width: 767px)")
+    // A phone in portrait collapses to a narrow CSS width, which previously
+    // starved the sparkle field (240 vs. 760 in landscape, where the wider
+    // viewport no longer matches the mobile breakpoint). Detect portrait
+    // explicitly so we can keep the per-area density close to the landscape
+    // look without touching desktop or mobile landscape.
+    const portraitQuery = window.matchMedia(
+      "(max-width: 767px) and (orientation: portrait)",
+    )
 
-    const update = (event?: MediaQueryListEvent) => {
-      setIsMobile(event ? event.matches : mediaQuery.matches)
+    const update = () => {
+      setIsMobile(mobileQuery.matches)
+      setIsMobilePortrait(portraitQuery.matches)
     }
 
     update()
-    mediaQuery.addEventListener("change", update)
+    mobileQuery.addEventListener("change", update)
+    portraitQuery.addEventListener("change", update)
 
     return () => {
-      mediaQuery.removeEventListener("change", update)
+      mobileQuery.removeEventListener("change", update)
+      portraitQuery.removeEventListener("change", update)
     }
   }, [])
 
@@ -34,7 +46,7 @@ export function HomeHero() {
               background="transparent"
               minSize={isMobile ? 0.2 : 0.24}
               maxSize={isMobile ? 0.9 : 1.4}
-              particleDensity={isMobile ? 240 : 760}
+              particleDensity={isMobilePortrait ? 760 : isMobile ? 240 : 760}
               className="sparkles-canvas"
               particleColor={sparkleColors}
               speed={isMobile ? 0.28 : 0.36}
