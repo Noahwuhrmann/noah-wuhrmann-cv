@@ -1241,15 +1241,21 @@ button {
 /* Contact: methods + brand email panel */
 .contact-split {
   grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.72fr);
-  align-items: center;
+  align-items: stretch;
+}
+
+/* Right column wrapper: lets the brand panel fill the methods column height */
+.contact-brand-col {
+  display: flex;
+  justify-content: center;
 }
 
 .contact-methods-col {
   min-width: 0;
 }
 
-.contact-methods-col .contact-column {
-  margin-top: 1.1rem;
+.contact-direct-label {
+  margin-bottom: 1.25rem;
 }
 
 .contact-panel-email {
@@ -1267,7 +1273,7 @@ button {
 
 .contact-brand-panel {
   width: min(100%, 34rem);
-  justify-self: center;
+  align-content: center;
 }
 
 .contact-brand-panel .liquid-button {
@@ -2301,10 +2307,9 @@ button {
 }
 
 .skills-command-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 1.25rem;
-  align-items: stretch;
   padding: 1.45rem;
   background:
     linear-gradient(135deg, rgba(24, 34, 52, 0.78), rgba(8, 12, 20, 0.84) 52%, rgba(24, 18, 39, 0.72)),
@@ -2314,8 +2319,8 @@ button {
 .skills-command-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0.4rem 0.15rem;
+  justify-content: flex-start;
+  padding: 0.4rem 0.15rem 0;
 }
 
 .skills-command-copy,
@@ -2364,7 +2369,8 @@ button {
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 100%;
+  flex: 1;
+  min-height: 0;
   padding: 1rem;
   border-radius: calc(var(--radius-xl) - 4px);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -3476,10 +3482,6 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .skills-command-panel {
-    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.76fr);
-  }
-
   .skills-workflow {
     grid-template-columns: 1fr;
   }
@@ -3508,7 +3510,6 @@ button {
   }
 
   .skills-command-panel {
-    grid-template-columns: 1fr;
     padding: 1.05rem;
   }
 

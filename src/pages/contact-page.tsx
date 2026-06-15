@@ -57,60 +57,64 @@ export function ContactPage() {
       </section>
 
       <section className="page-section">
-        <div className="container split-layout contact-split">
-          <Reveal className="contact-methods-col">
-            <span className="section-kicker">{copy.contact.directLabel}</span>
-            <div className="contact-column">
-              {copy.contact.methods.map((method) =>
-                method.href ? (
-                  <a
-                    className="contact-link card-link"
-                    href={method.href}
-                    key={method.label}
-                    target={method.href.startsWith("http") ? "_blank" : undefined}
-                    rel={method.href.startsWith("http") ? "noreferrer" : undefined}
-                  >
-                    <span className="contact-badge">
-                      <ContactIcon label={method.label} />
-                    </span>
-                    <span className="contact-text">
-                      <strong>{method.label}</strong>
-                      <span>{method.value}</span>
-                    </span>
+        <div className="container">
+          <Reveal as="span" className="section-kicker contact-direct-label">
+            {copy.contact.directLabel}
+          </Reveal>
+          <div className="split-layout contact-split">
+            <Reveal className="contact-methods-col">
+              <div className="contact-column">
+                {copy.contact.methods.map((method) =>
+                  method.href ? (
+                    <a
+                      className="contact-link card-link"
+                      href={method.href}
+                      key={method.label}
+                      target={method.href.startsWith("http") ? "_blank" : undefined}
+                      rel={method.href.startsWith("http") ? "noreferrer" : undefined}
+                    >
+                      <span className="contact-badge">
+                        <ContactIcon label={method.label} />
+                      </span>
+                      <span className="contact-text">
+                        <strong>{method.label}</strong>
+                        <span>{method.value}</span>
+                      </span>
+                    </a>
+                  ) : (
+                    <div className="contact-link" key={method.label}>
+                      <span className="contact-badge">
+                        <ContactIcon label={method.label} />
+                      </span>
+                      <span className="contact-text">
+                        <strong>{method.label}</strong>
+                        <span>{method.value}</span>
+                      </span>
+                    </div>
+                  ),
+                )}
+              </div>
+            </Reveal>
+
+            <Reveal delay={120} className="contact-brand-col">
+              <div className="brand-panel contact-brand-panel">
+                <span className="brand-panel__label">{email.label}</span>
+                <h2 className="section-title">{copy.contact.panelTitle}</h2>
+                {email.href ? (
+                  <a className="contact-panel-email" href={email.href}>
+                    {email.value}
                   </a>
                 ) : (
-                  <div className="contact-link" key={method.label}>
-                    <span className="contact-badge">
-                      <ContactIcon label={method.label} />
-                    </span>
-                    <span className="contact-text">
-                      <strong>{method.label}</strong>
-                      <span>{method.value}</span>
-                    </span>
-                  </div>
-                ),
-              )}
-            </div>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <div className="brand-panel contact-brand-panel">
-              <span className="brand-panel__label">{email.label}</span>
-              <h2 className="section-title">{copy.contact.panelTitle}</h2>
-              {email.href ? (
-                <a className="contact-panel-email" href={email.href}>
-                  {email.value}
-                </a>
-              ) : (
-                <span className="contact-panel-email">{email.value}</span>
-              )}
-              {email.href ? (
-                <a className="liquid-button primary" href={email.href}>
-                  <span>{copy.contact.panelCta}</span>
-                </a>
-              ) : null}
-            </div>
-          </Reveal>
+                  <span className="contact-panel-email">{email.value}</span>
+                )}
+                {email.href ? (
+                  <a className="liquid-button primary" href={email.href}>
+                    <span>{copy.contact.panelCta}</span>
+                  </a>
+                ) : null}
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

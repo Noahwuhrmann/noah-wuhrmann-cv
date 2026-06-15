@@ -567,15 +567,15 @@ export const siteCopy: Record<Language, SiteCopy> = {
       availability: [
         {
           title: "Interessen",
-          body: "Daten, Finanzen und Automatisierung – mich begeistern Themen, bei denen Analyse, Zahlen und smarte Prozesse zusammenkommen.",
+          body: "Daten, Finanzen und Automatisierung. Mich interessieren Themen, bei denen analytisches Denken und praktische Umsetzung zusammenkommen. Dazu gehören Datenanalyse, Finanzthemen, Prozessoptimierung und digitale Tools.",
         },
         {
-          title: "Profil",
-          body: "Wirtschaft, Technik, Analyse und operative Umsetzung in einem ausgewogenen Profil.",
+          title: "Kompetenzen",
+          body: "Analytisch, praxisnah und lösungsorientiert. Ich arbeite gerne strukturiert, erkenne Verbesserungspotenzial in bestehenden Abläufen und suche nach Lösungen, die nicht nur theoretisch gut klingen, sondern im Alltag funktionieren.",
         },
         {
           title: "Unterlagen",
-          body: "Lebenslauf und weitere Informationen stelle ich gerne auf Anfrage zur Verfügung.",
+          body: "Mehr Informationen auf Anfrage. Lebenslauf, Projektübersichten oder weitere Informationen stelle ich bei Interesse gerne zur Verfügung.",
         },
       ],
     },
@@ -994,15 +994,15 @@ export const siteCopy: Record<Language, SiteCopy> = {
       availability: [
         {
           title: "Interests",
-          body: "Data, finance and automation – I am drawn to topics where analysis, numbers and smart processes come together.",
+          body: "Data, finance and automation. I am drawn to topics where analytical thinking and practical execution come together: data analysis, finance, process optimisation and digital tools.",
         },
         {
-          title: "Profile",
-          body: "A balanced combination of business, technology, analysis and operational execution.",
+          title: "Competencies",
+          body: "Analytical, hands-on and solution-oriented. I work in a structured way, spot room for improvement in existing processes and look for solutions that work in everyday practice, not just in theory.",
         },
         {
           title: "Documents",
-          body: "CV and further information are available on request.",
+          body: "More information on request. CV, project overviews and further details are available whenever you're interested.",
         },
       ],
     },
