@@ -6,7 +6,7 @@ import { SparklesCore } from "@/components/ui/sparkles"
 // with a touch of near-white so the field keeps its sparkle.
 const sparkleColors = ["#59d9ff", "#42e2c3", "#51a8ff", "#8ee9da", "#eaf7ff"]
 
-export function HomeHero() {
+export function HomeSparkles() {
   const [isMobile, setIsMobile] = useState(false)
   const [isMobilePortrait, setIsMobilePortrait] = useState(false)
 
@@ -37,25 +37,27 @@ export function HomeHero() {
   }, [])
 
   return (
-    <section className="home-hero">
-      <div className="home-hero-ambient" aria-hidden="true">
-        <div className="sparkles-visual">
-          <div className="sparkles-field">
-            <SparklesCore
-              id="hero-sparkles"
-              background="transparent"
-              minSize={isMobile ? 0.2 : 0.24}
-              maxSize={isMobile ? 0.9 : 1.4}
-              particleDensity={isMobilePortrait ? 760 : isMobile ? 240 : 760}
-              className="sparkles-canvas"
-              particleColor={sparkleColors}
-              speed={isMobile ? 0.28 : 0.36}
-            />
-          </div>
-          <div className="sparkles-mask" />
-        </div>
+    <div className="sparkles-visual">
+      <div className="sparkles-field">
+        <SparklesCore
+          id="home-sparkles"
+          background="transparent"
+          minSize={isMobile ? 0.2 : 0.24}
+          maxSize={isMobile ? 0.9 : 1.4}
+          particleDensity={isMobilePortrait ? 760 : isMobile ? 240 : 760}
+          className="sparkles-canvas"
+          particleColor={sparkleColors}
+          speed={isMobile ? 0.28 : 0.36}
+        />
       </div>
+      <div className="sparkles-mask" />
+    </div>
+  )
+}
 
+export function HomeHero() {
+  return (
+    <section className="home-hero">
       <div className="home-hero-shell">
         <div className="hero-name-stage">
           <div className="hero-title-haze" aria-hidden="true" />

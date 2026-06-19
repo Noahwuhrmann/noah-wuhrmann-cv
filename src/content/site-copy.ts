@@ -52,6 +52,7 @@ type ProjectItem = {
   title: string
   body: string
   tags: string[]
+  href?: string
 }
 
 type ContactMethod = {
@@ -59,11 +60,6 @@ type ContactMethod = {
   value: string
   href?: string
   badge: string
-}
-
-type AvailabilityItem = {
-  title: string
-  body: string
 }
 
 type PageCopy = {
@@ -139,16 +135,14 @@ export type SiteCopy = {
     items: SkillItem[]
   }
   projects: PageCopy & {
+    ctaLabel: string
     items: ProjectItem[]
   }
   contact: PageCopy & {
     directLabel: string
     panelTitle: string
     panelCta: string
-    availabilityLabel: string
-    availabilityTitle: string
     methods: ContactMethod[]
-    availability: AvailabilityItem[]
   }
   footer: string
 }
@@ -505,13 +499,14 @@ export const siteCopy: Record<Language, SiteCopy> = {
       title: "Arbeiten, die Qualität sichtbar machen",
       lead:
         "Ausgewählte Projekte zeigen, wie ich digitale und analytische Themen mit echtem Praxisbezug angehe.",
+      ctaLabel: "Projekt ansehen",
       items: [
         {
           label: "Projekt 01",
-          title: "Automatisierung der Produktbildbearbeitung",
+          title: "Taurus Image Tool – Desktop-App für Produktbilder",
           body:
-            "Ich habe ein Python-Tool entwickelt, das Produktbilder aus unterschiedlichen Quellen automatisiert standardisiert, Hintergründe bereinigt, Produkte korrekt positioniert und Dateien strukturiert abspeichert. Das Ergebnis ist ein effizienterer Prozess mit weniger manueller Arbeit und konsistenterer Bildqualität.",
-          tags: ["Python", "Bildverarbeitung", "Prozessautomatisierung"],
+            "Ich habe eine lokale Desktop-App entwickelt, die Produktbilder importiert, mit mehreren KI-Modellen automatisch freistellt und präzise manuelle Korrekturen ermöglicht. Die App unterstützt ausserdem die Sortierung der finalen Bildreihenfolge sowie einen konfigurierbaren Export mit passenden Dateinamen, Formaten, Hintergründen und Komprimierung.",
+          tags: ["Python", "Desktop-App", "KI-Bildverarbeitung"],
         },
         {
           label: "Projekt 02",
@@ -519,13 +514,14 @@ export const siteCopy: Record<Language, SiteCopy> = {
           body:
             "Ausgehend von SAP-Exporten und manuellen Excel-Schritten habe ich eine digitale Lösung konzipiert, mit der Einkaufsdaten automatisiert verarbeitet und strukturiert für Entscheidungen aufbereitet werden können. Das Projekt verbindet klaren Praxisbezug mit starkem Digitalisierungsfokus.",
           tags: ["SAP", "Excel", "Prozessanalyse"],
+          href: "https://github.com/Noahwuhrmann/Einkauf_analyse",
         },
         {
           label: "Projekt 03",
-          title: "Modellierung dynamischer Systeme",
+          title: "Portfolio-Website & Wuhrmann Solutions",
           body:
-            "Im Rahmen von Projekten habe ich dynamische Systeme modelliert, Parameter untersucht, Simulationen interpretiert und die Ergebnisse strukturiert dokumentiert. Dadurch wurden systemisches Denken, Modellbildung und analytische Struktur weiter geschärft.",
-          tags: ["Berkeley Madonna", "Simulation", "Analyse"],
+            "Ich habe diese responsive Portfolio-Website konzipiert und entwickelt. Zusätzlich habe ich die Website für Wuhrmann Solutions umgesetzt. Sie präsentiert meine individuellen Softwarelösungen und meinen Fokus auf Digitalisierung, Automatisierung und praxisnahe Prozessverbesserung.",
+          tags: ["React", "TypeScript", "Webdesign"],
         },
       ],
     },
@@ -535,10 +531,8 @@ export const siteCopy: Record<Language, SiteCopy> = {
       lead:
         "Ich freue mich über den Austausch zu Einstiegsmöglichkeiten, spannenden Projekten und Rollen an der Schnittstelle von Wirtschaft, Technik und Analyse.",
       directLabel: "Direkt erreichbar",
-      panelTitle: "Schreiben Sie mir direkt",
+      panelTitle: "Schreiben Sie mir",
       panelCta: "E-Mail schreiben",
-      availabilityLabel: "Zusammenarbeit",
-      availabilityTitle: "Auf einen Blick",
       methods: [
         {
           label: "E-Mail",
@@ -562,20 +556,6 @@ export const siteCopy: Record<Language, SiteCopy> = {
           label: "Standort",
           value: "Raum Zürich, Schweiz",
           badge: "ZH",
-        },
-      ],
-      availability: [
-        {
-          title: "Interessen",
-          body: "Daten, Finanzen und Automatisierung. Mich interessieren Themen, bei denen analytisches Denken und praktische Umsetzung zusammenkommen. Dazu gehören Datenanalyse, Finanzthemen, Prozessoptimierung und digitale Tools.",
-        },
-        {
-          title: "Kompetenzen",
-          body: "Analytisch, praxisnah und lösungsorientiert. Ich arbeite gerne strukturiert, erkenne Verbesserungspotenzial in bestehenden Abläufen und suche nach Lösungen, die nicht nur theoretisch gut klingen, sondern im Alltag funktionieren.",
-        },
-        {
-          title: "Unterlagen",
-          body: "Mehr Informationen auf Anfrage. Lebenslauf, Projektübersichten oder weitere Informationen stelle ich bei Interesse gerne zur Verfügung.",
         },
       ],
     },
@@ -932,13 +912,14 @@ export const siteCopy: Record<Language, SiteCopy> = {
       title: "Work that makes quality visible",
       lead:
         "Selected projects show how I approach digital and analytical topics with a clear link to practical application.",
+      ctaLabel: "View project",
       items: [
         {
           label: "Case Study 01",
-          title: "Automating product image processing",
+          title: "Taurus Image Tool – Desktop app for product images",
           body:
-            "I developed a Python-based tool that standardizes product images from different sources, cleans up backgrounds, positions products consistently and stores files in a structured way. The result is a more efficient workflow with less manual work and more consistent image quality.",
-          tags: ["Python", "Image Processing", "Process Automation"],
+            "I developed a local desktop app that imports product images, removes backgrounds automatically using multiple AI models and enables precise manual corrections. The app also supports arranging the final image order and configurable exports with suitable filenames, formats, backgrounds and compression.",
+          tags: ["Python", "Desktop App", "AI Image Processing"],
         },
         {
           label: "Case Study 02",
@@ -946,13 +927,14 @@ export const siteCopy: Record<Language, SiteCopy> = {
           body:
             "Based on SAP exports and manual Excel steps, I designed a digital solution concept that would automatically process and structure purchasing data for better decision-making. The project combines a strong practical angle with a clear digitalization focus.",
           tags: ["SAP", "Excel", "Process Analysis"],
+          href: "https://github.com/Noahwuhrmann/Einkauf_analyse",
         },
         {
           label: "Case Study 03",
-          title: "Modeling dynamic systems",
+          title: "Portfolio website & Wuhrmann Solutions",
           body:
-            "In project work, I modeled dynamic systems, explored parameter effects, interpreted simulations and documented results in a structured way. This strengthened my systems thinking, modeling approach and analytical discipline.",
-          tags: ["Berkeley Madonna", "Simulation", "Analysis"],
+            "I designed and developed this responsive portfolio website. I also created the Wuhrmann Solutions website. It presents my custom software solutions and my focus on digitalization, automation and practical process improvement.",
+          tags: ["React", "TypeScript", "Web Design"],
         },
       ],
     },
@@ -962,10 +944,8 @@ export const siteCopy: Record<Language, SiteCopy> = {
       lead:
         "I am happy to connect about entry-level opportunities, interesting projects and roles at the intersection of business, technology and analysis.",
       directLabel: "Direct channels",
-      panelTitle: "Write to me directly",
+      panelTitle: "Write to me",
       panelCta: "Write an email",
-      availabilityLabel: "Collaboration",
-      availabilityTitle: "At a glance",
       methods: [
         {
           label: "Email",
@@ -989,20 +969,6 @@ export const siteCopy: Record<Language, SiteCopy> = {
           label: "Location",
           value: "Greater Zurich Area, Switzerland",
           badge: "ZH",
-        },
-      ],
-      availability: [
-        {
-          title: "Interests",
-          body: "Data, finance and automation. I am drawn to topics where analytical thinking and practical execution come together: data analysis, finance, process optimisation and digital tools.",
-        },
-        {
-          title: "Competencies",
-          body: "Analytical, hands-on and solution-oriented. I work in a structured way, spot room for improvement in existing processes and look for solutions that work in everyday practice, not just in theory.",
-        },
-        {
-          title: "Documents",
-          body: "More information on request. CV, project overviews and further details are available whenever you're interested.",
         },
       ],
     },

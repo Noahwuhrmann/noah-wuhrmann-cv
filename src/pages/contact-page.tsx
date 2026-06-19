@@ -118,25 +118,6 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="page-section page-section--muted">
-        <div className="container">
-          <Reveal className="section-heading">
-            <span className="section-kicker">{copy.contact.availabilityLabel}</span>
-            <h2 className="section-title">{copy.contact.availabilityTitle}</h2>
-          </Reveal>
-
-          <div className="compact-grid">
-            {copy.contact.availability.map((item, index) => (
-              <Reveal key={item.title} delay={index * 80}>
-                <article className="content-card info-card availability-card">
-                  <h2>{item.title}</h2>
-                  <p>{item.body}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   )
 }

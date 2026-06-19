@@ -2,7 +2,7 @@ import { Icon, type IconName } from "@/components/ui/icons"
 import { Reveal } from "@/components/ui/reveal"
 import { useLanguage } from "@/lib/language-context"
 
-const projectIcons: IconName[] = ["image", "cart", "wave"]
+const projectIcons: IconName[] = ["image", "cart", "rocket"]
 
 export function ProjectsPage() {
   const { copy } = useLanguage()
@@ -31,12 +31,28 @@ export function ProjectsPage() {
                   </div>
                   <h2>{item.title}</h2>
                   <p>{item.body}</p>
-                  <div className="tag-list">
-                    {item.tags.map((tag) => (
-                      <span className="tag" key={tag}>
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="project-card-footer">
+                    <div className="tag-list">
+                      {item.tags.map((tag) => (
+                        <span className="tag" key={tag}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {item.href ? (
+                      <a
+                        className="project-view-button"
+                        href={item.href}
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                      >
+                        {copy.projects.ctaLabel}
+                      </a>
+                    ) : (
+                      <button className="project-view-button" type="button" disabled>
+                        {copy.projects.ctaLabel}
+                      </button>
+                    )}
                   </div>
                 </article>
               </Reveal>

@@ -1,4 +1,4 @@
-import { HomeHero } from "@/components/hero/home-hero"
+import { HomeHero, HomeSparkles } from "@/components/hero/home-hero"
 import { useLanguage } from "@/lib/language-context"
 
 export function HomePage() {
@@ -7,6 +7,10 @@ export function HomePage() {
 
   return (
     <div className="home-page">
+      <div className="home-page-ambient" aria-hidden="true">
+        <HomeSparkles />
+      </div>
+
       <HomeHero />
 
       <section className="home-reveal" aria-labelledby="home-marquee-label">
