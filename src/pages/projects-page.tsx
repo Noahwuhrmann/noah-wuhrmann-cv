@@ -32,12 +32,17 @@ export function ProjectsPage() {
                   <h2>{item.title}</h2>
                   <p>{item.body}</p>
                   <div className="project-card-footer">
-                    <div className="tag-list">
-                      {item.tags.map((tag) => (
-                        <span className="tag" key={tag}>
-                          {tag}
-                        </span>
-                      ))}
+                    <div className="project-card-skills">
+                      <span className="project-card-skills-label">
+                        {copy.projects.skillsLabel}
+                      </span>
+                      <div className="tag-list">
+                        {item.tags.map((tag) => (
+                          <span className="tag" key={tag}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                     {item.href ? (
                       <a
@@ -46,11 +51,13 @@ export function ProjectsPage() {
                         target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                       >
-                        {copy.projects.ctaLabel}
+                        <span>{copy.projects.ctaLabel}</span>
+                        <span className="project-view-button__icon" aria-hidden="true">↗</span>
                       </a>
                     ) : (
                       <button className="project-view-button" type="button" disabled>
-                        {copy.projects.ctaLabel}
+                        <span>{copy.projects.ctaLabel}</span>
+                        <span className="project-view-button__icon" aria-hidden="true">↗</span>
                       </button>
                     )}
                   </div>

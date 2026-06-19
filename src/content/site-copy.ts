@@ -136,6 +136,7 @@ export type SiteCopy = {
   }
   projects: PageCopy & {
     ctaLabel: string
+    skillsLabel: string
     items: ProjectItem[]
   }
   contact: PageCopy & {
@@ -500,6 +501,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
       lead:
         "Ausgewählte Projekte zeigen, wie ich digitale und analytische Themen mit echtem Praxisbezug angehe.",
       ctaLabel: "Projekt ansehen",
+      skillsLabel: "Tools",
       items: [
         {
           label: "Projekt 01",
@@ -913,6 +915,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
       lead:
         "Selected projects show how I approach digital and analytical topics with a clear link to practical application.",
       ctaLabel: "View project",
+      skillsLabel: "Tools",
       items: [
         {
           label: "Case Study 01",
