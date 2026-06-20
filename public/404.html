@@ -9,9 +9,7 @@
     <script>
       ;(() => {
         const path = `${window.location.pathname}${window.location.search}${window.location.hash}`
-        const segments = window.location.pathname.split("/").filter(Boolean)
-        const basePath = segments.length > 0 ? `/${segments[0]}/` : "/"
-        const redirectUrl = `${basePath}?redirect=${encodeURIComponent(path)}`
+        const redirectUrl = `/?redirect=${encodeURIComponent(path)}`
 
         window.location.replace(redirectUrl)
       })()

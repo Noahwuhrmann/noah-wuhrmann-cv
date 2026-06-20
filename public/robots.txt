@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://noahwuhrmann.github.io/noah-wuhrmann-cv/sitemap.xml
+Sitemap: https://noah.wuhrmann-solutions.ch/sitemap.xml

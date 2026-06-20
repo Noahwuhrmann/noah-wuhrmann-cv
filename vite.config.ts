@@ -5,14 +5,13 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const githubPagesBase = "/noah-wuhrmann-cv/"
 
-export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? githubPagesBase : "/",
+export default defineConfig({
+  base: "/",
   plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}))
+})
