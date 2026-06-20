@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useLayoutEffect, useState } from "react"
 import { NavLink, Outlet, useLocation } from "react-router-dom"
 
 import { useLanguage } from "@/lib/language-context"
+import { REVEAL_INTENT_EVENT } from "@/lib/reveal-events"
 import { cn } from "@/lib/utils"
 
 const languages = [
@@ -15,6 +16,12 @@ export function SiteLayout() {
   const isHome = location.pathname === "/"
   const [menuOpen, setMenuOpen] = useState(false)
   const [homeScrolled, setHomeScrolled] = useState(false)
+  const [revealState, setRevealState] = useState({
+    active: false,
+    locationKey: location.key,
+  })
+  const revealsActive =
+    revealState.active && revealState.locationKey === location.key
 
   const title = copy.routeTitles[location.pathname] || copy.brand.title
 
@@ -25,6 +32,74 @@ export function SiteLayout() {
   useEffect(() => {
     setMenuOpen(false)
   }, [location.pathname])
+
+  useEffect(() => {
+    if (!menuOpen) {
+      return undefined
+    }
+
+    const previousOverflow = document.body.style.overflow
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false)
+      }
+    }
+
+    document.body.style.overflow = "hidden"
+    window.addEventListener("keydown", closeOnEscape)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener("keydown", closeOnEscape)
+    }
+  }, [menuOpen])
+
+  useLayoutEffect(() => {
+    setRevealState({ active: false, locationKey: location.key })
+  }, [location.key])
+
+  useEffect(() => {
+    if (isHome) {
+      return undefined
+    }
+
+    const activateReveals = () => {
+      setRevealState({ active: true, locationKey: location.key })
+    }
+
+    const activateOnWheel = (event: WheelEvent) => {
+      if (event.deltaY > 0) {
+        activateReveals()
+      }
+    }
+
+    const activateOnKeyDown = (event: KeyboardEvent) => {
+      const target = event.target
+      const isTyping =
+        target instanceof HTMLElement &&
+        (target.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(target.tagName))
+
+      if (isTyping) {
+        return
+      }
+
+      if (["ArrowDown", "PageDown", "End", " "].includes(event.key)) {
+        activateReveals()
+      }
+    }
+
+    window.addEventListener("wheel", activateOnWheel, { passive: true })
+    window.addEventListener("touchmove", activateReveals, { passive: true })
+    window.addEventListener("keydown", activateOnKeyDown)
+    window.addEventListener(REVEAL_INTENT_EVENT, activateReveals)
+
+    return () => {
+      window.removeEventListener("wheel", activateOnWheel)
+      window.removeEventListener("touchmove", activateReveals)
+      window.removeEventListener("keydown", activateOnKeyDown)
+      window.removeEventListener(REVEAL_INTENT_EVENT, activateReveals)
+    }
+  }, [isHome, location.key])
 
   useEffect(() => {
     if (!isHome) {
@@ -46,7 +121,13 @@ export function SiteLayout() {
 
   return (
     <div className="app-shell">
-      <div className={cn("page-shell", isHome && "page-shell-home")}>
+      <div
+        className={cn(
+          "page-shell",
+          isHome && "page-shell-home",
+          revealsActive && "reveals-active",
+        )}
+      >
         <header
           className={cn(
             "site-header",
@@ -133,7 +214,7 @@ export function SiteLayout() {
         </header>
 
         <main className={cn("page-main", isHome && "page-main-home")}>
-          <Outlet />
+          <Outlet key={location.key} />
         </main>
 
         {isHome ? null : (

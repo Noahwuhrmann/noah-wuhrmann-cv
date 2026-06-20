@@ -2,12 +2,13 @@ import type { CSSProperties } from "react"
 
 import { Icon, type IconName } from "@/components/ui/icons"
 import { Reveal } from "@/components/ui/reveal"
+import { SubpageScrollCue } from "@/components/ui/subpage-scroll-cue"
 import { useLanguage } from "@/lib/language-context"
 
 const maxSkillLevel = 5
 
 const toolIcons: IconName[] = ["chart", "bolt", "briefcase", "palette", "spark"]
-const workflowIcons: IconName[] = ["search", "layers", "bolt", "rocket"]
+const workflowIcons: IconName[] = ["search", "flowchart", "bolt", "rocket"]
 
 function getSkillStyle(level: number): CSSProperties {
   const clampedLevel = Math.min(Math.max(level, 0), maxSkillLevel)
@@ -22,20 +23,24 @@ export function SkillsPage() {
 
   return (
     <div className="skills-page-view">
-      <section className="subpage-hero">
-        <div className="container">
-          <Reveal className="subpage-hero__inner">
-            <span className="eyebrow">{copy.skills.eyebrow}</span>
-            <h1 className="page-title">{copy.skills.title}</h1>
-            <p className="page-lead">{copy.skills.lead}</p>
-          </Reveal>
-        </div>
-      </section>
+      <div className="subpage-intro">
+        <section className="subpage-hero">
+          <div className="container">
+            <Reveal className="subpage-hero__inner" showOnMount>
+              <span className="eyebrow">{copy.skills.eyebrow}</span>
+              <h1 className="page-title">{copy.skills.title}</h1>
+              <p className="page-lead">{copy.skills.lead}</p>
+            </Reveal>
+          </div>
+        </section>
+
+        <SubpageScrollCue />
+      </div>
 
       <section className="page-section">
         <div className="container">
-          <Reveal className="skills-showcase">
-            <article className="skills-command-panel glass-panel">
+          <div className="skills-showcase">
+            <Reveal as="article" className="skills-command-panel glass-panel">
               <div className="skills-command-copy">
                 <span className="skills-panel-label">{copy.skills.highlightLabel}</span>
                 <h2>{copy.skills.highlightTitle}</h2>
@@ -67,9 +72,9 @@ export function SkillsPage() {
                   ))}
                 </div>
               </div>
-            </article>
+            </Reveal>
 
-            <aside className="skills-tool-panel glass-panel">
+            <Reveal as="aside" className="skills-tool-panel glass-panel" delay={100}>
               <span className="skills-panel-label">{copy.skills.toolLabel}</span>
               <h2>{copy.skills.toolTitle}</h2>
 
@@ -90,8 +95,8 @@ export function SkillsPage() {
                   </section>
                 ))}
               </div>
-            </aside>
-          </Reveal>
+            </Reveal>
+          </div>
 
           <Reveal
             className="skills-workflow glass-panel"

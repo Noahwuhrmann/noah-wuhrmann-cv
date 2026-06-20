@@ -1,5 +1,6 @@
 import { Icon, type IconName } from "@/components/ui/icons"
 import { Reveal } from "@/components/ui/reveal"
+import { SubpageScrollCue } from "@/components/ui/subpage-scroll-cue"
 import { useLanguage } from "@/lib/language-context"
 
 const portraitImage = `${import.meta.env.BASE_URL}noah_wuhrmann.png`
@@ -11,15 +12,19 @@ export function AboutPage() {
 
   return (
     <>
-      <section className="subpage-hero">
-        <div className="container">
-          <Reveal className="subpage-hero__inner">
-            <span className="eyebrow">{copy.about.eyebrow}</span>
-            <h1 className="page-title">{copy.about.title}</h1>
-            <p className="page-lead">{copy.about.lead}</p>
-          </Reveal>
-        </div>
-      </section>
+      <div className="subpage-intro">
+        <section className="subpage-hero">
+          <div className="container">
+            <Reveal className="subpage-hero__inner" showOnMount>
+              <span className="eyebrow">{copy.about.eyebrow}</span>
+              <h1 className="page-title">{copy.about.title}</h1>
+              <p className="page-lead">{copy.about.lead}</p>
+            </Reveal>
+          </div>
+        </section>
+
+        <SubpageScrollCue />
+      </div>
 
       <section className="page-section">
         <div className="container split-layout split-layout--narrow-first about-profile">

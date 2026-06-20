@@ -6,6 +6,7 @@ import milLogo from "@/assets/logos/mil.png"
 import tauLogo from "@/assets/logos/tau.png"
 import zhawLogo from "@/assets/logos/zhaw.png"
 import { Reveal } from "@/components/ui/reveal"
+import { SubpageScrollCue } from "@/components/ui/subpage-scroll-cue"
 import { useLanguage } from "@/lib/language-context"
 import { cn } from "@/lib/utils"
 
@@ -68,19 +69,23 @@ export function ResumePage() {
 
   return (
     <>
-      <section className="subpage-hero">
-        <div className="container">
-          <Reveal className="subpage-hero__inner">
-            <span className="eyebrow">{copy.resume.eyebrow}</span>
-            <h1 className="page-title">{copy.resume.title}</h1>
-            <p className="page-lead">{copy.resume.lead}</p>
-          </Reveal>
-        </div>
-      </section>
+      <div className="subpage-intro">
+        <section className="subpage-hero">
+          <div className="container">
+            <Reveal className="subpage-hero__inner" showOnMount>
+              <span className="eyebrow">{copy.resume.eyebrow}</span>
+              <h1 className="page-title">{copy.resume.title}</h1>
+              <p className="page-lead">{copy.resume.lead}</p>
+            </Reveal>
+          </div>
+        </section>
+
+        <SubpageScrollCue />
+      </div>
 
       <section className="page-section resume-section">
         <div className="container">
-          <div className="resume-desktop-layout">
+          <Reveal className="resume-desktop-layout">
           <div
             className={cn(
               "resume-parallel-grid",
@@ -122,15 +127,17 @@ export function ResumePage() {
 
             {copy.resume.rows.map((row) => (
               <Fragment key={row.id}>
-                <div className="resume-period-cell">
+                <Reveal className="resume-period-cell">
                   <span className="timeline-badge">{row.period}</span>
-                </div>
+                </Reveal>
 
-                <article
+                <Reveal
+                  as="article"
                   className={cn(
                     "resume-track-card resume-track-card-career",
                     !row.career && "is-empty",
                   )}
+                  delay={60}
                 >
                   {row.career ? (
                     <div className="resume-track-card-content">
@@ -145,13 +152,15 @@ export function ResumePage() {
                   ) : (
                     <div className="resume-track-placeholder" aria-hidden="true" />
                   )}
-                </article>
+                </Reveal>
 
-                <article
+                <Reveal
+                  as="article"
                   className={cn(
                     "resume-track-card resume-track-card-education",
                     !row.education && "is-empty",
                   )}
+                  delay={120}
                 >
                   {row.education ? (
                     <div className="resume-track-card-content">
@@ -166,14 +175,14 @@ export function ResumePage() {
                   ) : (
                     <div className="resume-track-placeholder" aria-hidden="true" />
                   )}
-                </article>
+                </Reveal>
               </Fragment>
             ))}
           </div>
-        </div>
+          </Reveal>
 
         <div className="resume-mobile-layout">
-          <section className="resume-mobile-section">
+          <Reveal as="section" className="resume-mobile-section">
             <button
               aria-controls="resume-career-mobile"
               aria-expanded={isCareerOpen}
@@ -193,9 +202,11 @@ export function ResumePage() {
               hidden={!isCareerOpen}
               id="resume-career-mobile"
             >
-              {careerRows.map((row) => (
-                <article
+              {careerRows.map((row, index) => (
+                <Reveal
+                  as="article"
                   className="timeline-row timeline-row-career"
+                  delay={(index % 2) * 70}
                   key={`${row.id}-career-mobile`}
                 >
                   <div>
@@ -210,12 +221,12 @@ export function ResumePage() {
                       ))}
                     </ul>
                   </div>
-                </article>
+                </Reveal>
               ))}
             </div>
-          </section>
+          </Reveal>
 
-          <section className="resume-mobile-section">
+          <Reveal as="section" className="resume-mobile-section">
             <button
               aria-controls="resume-education-mobile"
               aria-expanded={isEducationOpen}
@@ -236,9 +247,11 @@ export function ResumePage() {
               id="resume-education-mobile"
             >
               <div className="timeline-grid">
-                {educationRows.map((row) => (
-                  <article
+                {educationRows.map((row, index) => (
+                  <Reveal
+                    as="article"
                     className="timeline-row"
+                    delay={(index % 2) * 70}
                     key={`${row.id}-education-mobile`}
                   >
                     <div>
@@ -253,11 +266,11 @@ export function ResumePage() {
                         ))}
                       </ul>
                     </div>
-                  </article>
+                  </Reveal>
                 ))}
               </div>
             </div>
-          </section>
+          </Reveal>
         </div>
 
         </div>

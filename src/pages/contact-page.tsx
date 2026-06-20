@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/ui/reveal"
+import { SubpageScrollCue } from "@/components/ui/subpage-scroll-cue"
 import { useLanguage } from "@/lib/language-context"
 
 function ContactIcon({ label }: { label: string }) {
@@ -46,15 +47,19 @@ export function ContactPage() {
 
   return (
     <>
-      <section className="subpage-hero">
-        <div className="container">
-          <Reveal className="subpage-hero__inner">
-            <span className="eyebrow">{copy.contact.eyebrow}</span>
-            <h1 className="page-title">{copy.contact.title}</h1>
-            <p className="page-lead">{copy.contact.lead}</p>
-          </Reveal>
-        </div>
-      </section>
+      <div className="subpage-intro">
+        <section className="subpage-hero">
+          <div className="container">
+            <Reveal className="subpage-hero__inner" showOnMount>
+              <span className="eyebrow">{copy.contact.eyebrow}</span>
+              <h1 className="page-title">{copy.contact.title}</h1>
+              <p className="page-lead">{copy.contact.lead}</p>
+            </Reveal>
+          </div>
+        </section>
+
+        <SubpageScrollCue />
+      </div>
 
       <section className="page-section">
         <div className="container">

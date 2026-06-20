@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useLayoutEffect } from "react"
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom"
 
 import { SiteLayout } from "@/components/layout/site-layout"
@@ -13,9 +13,31 @@ import { SkillsPage } from "@/pages/skills-page"
 function ScrollToTop() {
   const location = useLocation()
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location.pathname])
+  useLayoutEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration
+    window.history.scrollRestoration = "manual"
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration
+    }
+  }, [])
+
+  useLayoutEffect(() => {
+    const root = document.documentElement
+    const previousScrollBehavior = root.style.scrollBehavior
+
+    root.style.scrollBehavior = "auto"
+    window.scrollTo({ left: 0, top: 0, behavior: "auto" })
+
+    const restoreFrame = window.requestAnimationFrame(() => {
+      root.style.scrollBehavior = previousScrollBehavior
+    })
+
+    return () => {
+      window.cancelAnimationFrame(restoreFrame)
+      root.style.scrollBehavior = previousScrollBehavior
+    }
+  }, [location.key])
 
   return null
 }

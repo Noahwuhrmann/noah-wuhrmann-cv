@@ -1,11 +1,12 @@
 import {
   createElement,
-  useEffect,
+  useLayoutEffect,
   useRef,
   type CSSProperties,
   type ElementType,
   type ReactNode,
 } from "react"
+import { useLocation } from "react-router-dom"
 
 type RevealProps = {
   children: ReactNode
@@ -13,40 +14,53 @@ type RevealProps = {
   delay?: number
   as?: ElementType
   style?: CSSProperties
+  showOnMount?: boolean
 }
 
 // Scroll-triggered fade-up, mirroring the Wuhrmann Solutions reveal behaviour.
-export function Reveal({ children, className = "", delay = 0, as = "div", style: styleProp }: RevealProps) {
+export function Reveal({
+  children,
+  className = "",
+  delay = 0,
+  as = "div",
+  style: styleProp,
+  showOnMount = false,
+}: RevealProps) {
   const ref = useRef<HTMLElement | null>(null)
+  const location = useLocation()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const node = ref.current
 
     if (!node) {
       return undefined
     }
 
+    node.classList.remove("is-visible")
+
     if (typeof IntersectionObserver === "undefined") {
       node.classList.add("is-visible")
       return undefined
     }
 
+    const nodeHeight = node.getBoundingClientRect().height
+    const threshold = nodeHeight > 0 ? Math.min(0.16, 96 / nodeHeight) : 0.16
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            node.classList.add("is-visible")
-            observer.disconnect()
-          }
+          node.classList.toggle("is-visible", entry.isIntersecting)
         })
       },
-      { threshold: 0.16, rootMargin: "0px 0px -48px 0px" },
+      { threshold, rootMargin: "0px 0px -48px 0px" },
     )
 
     observer.observe(node)
 
-    return () => observer.disconnect()
-  }, [])
+    return () => {
+      observer.disconnect()
+    }
+  }, [location.key])
 
   const style: CSSProperties | undefined =
     delay || styleProp
@@ -55,7 +69,11 @@ export function Reveal({ children, className = "", delay = 0, as = "div", style:
 
   return createElement(
     as,
-    { ref, className: `reveal ${className}`.trim(), style },
+    {
+      ref,
+      className: `reveal ${showOnMount ? "reveal-on-mount" : ""} ${className}`.trim(),
+      style,
+    },
     children,
   )
 }

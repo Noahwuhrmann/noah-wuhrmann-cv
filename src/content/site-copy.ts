@@ -74,6 +74,7 @@ export type SiteCopy = {
     subtitle: string
   }
   languageLabel: string
+  scrollHint: string
   nav: NavItem[]
   routeTitles: Record<string, string>
   home: {
@@ -155,6 +156,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
       subtitle: "Wirtschaft, Technik & Praxis",
     },
     languageLabel: "Sprache",
+    scrollHint: "Scrollen",
     nav: [
       { label: "Home", to: "/", end: true },
       { label: "Über mich", to: "/about" },
@@ -569,6 +571,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
       subtitle: "Business, Technology & Practice",
     },
     languageLabel: "Language",
+    scrollHint: "Scroll",
     nav: [
       { label: "Home", to: "/", end: true },
       { label: "About", to: "/about" },

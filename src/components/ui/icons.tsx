@@ -155,6 +155,42 @@ function GlyphLayers({ ids }: GlyphProps) {
   )
 }
 
+function GlyphFlowchart({ ids }: GlyphProps) {
+  return (
+    <Svg>
+      <IconDefs ids={ids} />
+      <path
+        d="M24 16 V24 H13.5 V32 M24 24 H34.5 V32"
+        transform={DEPTH_OFFSET}
+        fill="none"
+        stroke={`url(#${ids.deep})`}
+        strokeWidth="3.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M24 16 V24 H13.5 V32 M24 24 H34.5 V32"
+        fill="none"
+        stroke={`url(#${ids.main})`}
+        strokeWidth="3.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <g transform={DEPTH_OFFSET} fill={`url(#${ids.deep})`}>
+        <rect x="17" y="6" width="14" height="10" rx="3" />
+        <rect x="6" y="32" width="15" height="10" rx="3" />
+        <rect x="27" y="32" width="15" height="10" rx="3" />
+      </g>
+      <g fill={`url(#${ids.main})`}>
+        <rect x="17" y="6" width="14" height="10" rx="3" />
+        <rect x="6" y="32" width="15" height="10" rx="3" />
+        <rect x="27" y="32" width="15" height="10" rx="3" />
+      </g>
+      <path d="M21 11 H27" stroke="#eafcff" strokeWidth="2" strokeLinecap="round" opacity=".78" />
+    </Svg>
+  )
+}
+
 function GlyphBolt({ ids }: GlyphProps) {
   const bolt = "M27 6 L13 27 H22 L19 42 L35 19 H25 Z"
   return (
@@ -280,6 +316,7 @@ const glyphs = {
   heart: GlyphHeart,
   search: GlyphSearch,
   layers: GlyphLayers,
+  flowchart: GlyphFlowchart,
   bolt: GlyphBolt,
   rocket: GlyphRocket,
   chart: GlyphChart,
