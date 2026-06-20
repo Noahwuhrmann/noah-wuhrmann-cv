@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui/reveal"
 import { SubpageScrollCue } from "@/components/ui/subpage-scroll-cue"
 import { useLanguage } from "@/lib/language-context"
 
-const portraitImage = `${import.meta.env.BASE_URL}noah_wuhrmann.png`
+const portraitImage = `${import.meta.env.BASE_URL}noah_wuhrmann.png?v=20260620`
 
 const cardIcons: IconName[] = ["user", "gears", "spark", "heart"]
 
