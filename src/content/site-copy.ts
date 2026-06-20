@@ -507,10 +507,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
       items: [
         {
           label: "Projekt 01",
-          title: "Taurus Image Tool – Desktop-App für Produktbilder",
+          title: "Taurus Image Tool: Desktop-App für Produktbilder",
           body:
             "Ich habe eine lokale Desktop-App entwickelt, die Produktbilder importiert, mit mehreren KI-Modellen automatisch freistellt und präzise manuelle Korrekturen ermöglicht. Die App unterstützt ausserdem die Sortierung der finalen Bildreihenfolge sowie einen konfigurierbaren Export mit passenden Dateinamen, Formaten, Hintergründen und Komprimierung.",
           tags: ["Python", "Desktop-App", "KI-Bildverarbeitung"],
+          href: "https://wuhrmann-solutions.ch/musterloesung",
         },
         {
           label: "Projekt 02",
@@ -526,6 +527,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
           body:
             "Ich habe diese responsive Portfolio-Website konzipiert und entwickelt. Zusätzlich habe ich die Website für Wuhrmann Solutions umgesetzt. Sie präsentiert meine individuellen Softwarelösungen und meinen Fokus auf Digitalisierung, Automatisierung und praxisnahe Prozessverbesserung.",
           tags: ["React", "TypeScript", "Webdesign"],
+          href: "https://wuhrmann-solutions.ch",
         },
       ],
     },
@@ -922,10 +924,11 @@ export const siteCopy: Record<Language, SiteCopy> = {
       items: [
         {
           label: "Case Study 01",
-          title: "Taurus Image Tool – Desktop app for product images",
+          title: "Taurus Image Tool: Desktop app for product images",
           body:
             "I developed a local desktop app that imports product images, removes backgrounds automatically using multiple AI models and enables precise manual corrections. The app also supports arranging the final image order and configurable exports with suitable filenames, formats, backgrounds and compression.",
           tags: ["Python", "Desktop App", "AI Image Processing"],
+          href: "https://wuhrmann-solutions.ch/musterloesung",
         },
         {
           label: "Case Study 02",
@@ -941,6 +944,7 @@ export const siteCopy: Record<Language, SiteCopy> = {
           body:
             "I designed and developed this responsive portfolio website. I also created the Wuhrmann Solutions website. It presents my custom software solutions and my focus on digitalization, automation and practical process improvement.",
           tags: ["React", "TypeScript", "Web Design"],
+          href: "https://wuhrmann-solutions.ch",
         },
       ],
     },
