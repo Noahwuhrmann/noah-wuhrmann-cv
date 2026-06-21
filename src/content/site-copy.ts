@@ -68,6 +68,42 @@ type PageCopy = {
   lead: string
 }
 
+type ImpressumCopy = {
+  eyebrow: string
+  title: string
+  lead: string
+  detailsLabel: string
+  address: string[]
+  contactLabel: string
+  emailLabel: string
+  email: string
+  websiteLabel: string
+  website: string
+  websiteHref: string
+  responsibleLabel: string
+  responsibleName: string
+}
+
+type DatenschutzBlock =
+  | string
+  | { sub: string }
+  | { list: string[] }
+  | { address: string[] }
+
+type DatenschutzSection = {
+  heading: string
+  body: DatenschutzBlock[]
+}
+
+type DatenschutzCopy = {
+  eyebrow: string
+  title: string
+  navLabel: string
+  lead: string
+  updated: string
+  sections: DatenschutzSection[]
+}
+
 export type SiteCopy = {
   brand: {
     title: string
@@ -146,6 +182,8 @@ export type SiteCopy = {
     panelCta: string
     methods: ContactMethod[]
   }
+  impressum: ImpressumCopy
+  datenschutz: DatenschutzCopy
   footer: string
 }
 
@@ -172,6 +210,8 @@ export const siteCopy: Record<Language, SiteCopy> = {
       "/skills": "Skills",
       "/projects": "Projekte",
       "/contact": "Kontakt",
+      "/impressum": "Impressum",
+      "/datenschutz": "Datenschutz",
     },
     home: {
       eyebrow: "Wirtschaft trifft Technik trifft Praxis",
@@ -565,6 +605,146 @@ export const siteCopy: Record<Language, SiteCopy> = {
         },
       ],
     },
+    impressum: {
+      eyebrow: "Rechtliches",
+      title: "Impressum",
+      lead: "Angaben zur verantwortlichen Person dieser Website.",
+      detailsLabel: "Angaben",
+      address: [
+        "Wuhrmann Solutions",
+        "Noah Wuhrmann",
+        "Klotenerstrasse 50",
+        "8303 Bassersdorf",
+        "Schweiz",
+      ],
+      contactLabel: "Kontakt",
+      emailLabel: "E-Mail",
+      email: "noah@wuhrmann-solutions.ch",
+      websiteLabel: "Website",
+      website: "www.wuhrmann-solutions.ch",
+      websiteHref: "https://www.wuhrmann-solutions.ch",
+      responsibleLabel: "Verantwortlich für den Inhalt dieser Website",
+      responsibleName: "Noah Wuhrmann",
+    },
+    datenschutz: {
+      eyebrow: "Rechtliches",
+      title: "Datenschutzerklärung",
+      navLabel: "Datenschutz",
+      lead: "Wie wir Ihre Personendaten bearbeiten und welche Rechte Ihnen zustehen.",
+      updated: "Stand: Juni 2026",
+      sections: [
+        {
+          heading: "1. Allgemeines",
+          body: [
+            "Der Schutz Ihrer persönlichen Daten ist Wuhrmann Solutions ein wichtiges Anliegen. Wir behandeln Personendaten vertraulich und gemäss den geltenden gesetzlichen Vorschriften des schweizerischen Datenschutzgesetzes (DSG) sowie, sofern anwendbar, der Datenschutz-Grundverordnung der Europäischen Union (DSGVO).",
+            "In dieser Datenschutzerklärung informieren wir Sie darüber, welche Personendaten wir bearbeiten, zu welchen Zwecken dies geschieht und welche Rechte Ihnen zustehen.",
+          ],
+        },
+        {
+          heading: "2. Verantwortliche Stelle",
+          body: [
+            { address: ["Wuhrmann Solutions", "Noah Wuhrmann", "Klotenerstrasse 50", "8303 Bassersdorf", "Schweiz"] },
+            "E-Mail: noah@wuhrmann-solutions.ch",
+            "Website: www.wuhrmann-solutions.ch",
+          ],
+        },
+        {
+          heading: "3. Erhebung und Verarbeitung von Personendaten",
+          body: [
+            { sub: "3.1 Besuch der Website" },
+            "Beim Aufruf unserer Website können automatisch technische Daten verarbeitet werden. Dazu gehören insbesondere:",
+            {
+              list: [
+                "IP-Adresse",
+                "Datum und Uhrzeit des Zugriffs",
+                "aufgerufene Seiten und Dateien",
+                "verwendeter Browser",
+                "verwendetes Betriebssystem",
+                "Referrer-URL",
+                "technische Informationen zur Verbindung",
+              ],
+            },
+            "Diese Daten dienen der technischen Bereitstellung der Website, der Sicherheit, der Fehleranalyse und der Stabilität des Online-Angebots.",
+            "Die Hauptwebsite www.wuhrmann-solutions.ch wird über Infomaniak gehostet. Die persönliche Subdomain noah.wuhrmann-solutions.ch kann über GitHub Pages bereitgestellt werden.",
+            { sub: "3.2 Kontaktaufnahme per E-Mail" },
+            "Wenn Sie uns per E-Mail kontaktieren, bearbeiten wir die von Ihnen übermittelten Angaben. Dazu können gehören:",
+            {
+              list: [
+                "Name",
+                "E-Mail-Adresse",
+                "Firma",
+                "Telefonnummer, falls freiwillig angegeben",
+                "Inhalt Ihrer Nachricht",
+                "weitere Angaben, die Sie uns freiwillig mitteilen",
+              ],
+            },
+            "Diese Daten verwenden wir ausschliesslich zur Bearbeitung Ihrer Anfrage, zur Kommunikation mit Ihnen und gegebenenfalls zur Vorbereitung oder Durchführung einer geschäftlichen Zusammenarbeit.",
+            { sub: "3.3 Kontaktformular" },
+            "Aktuell ist auf dieser Website kein Kontaktformular vorhanden. Die Kontaktaufnahme erfolgt direkt per E-Mail an noah@wuhrmann-solutions.ch. Dabei werden ausschliesslich die Daten bearbeitet, die Sie uns in Ihrer Nachricht freiwillig übermitteln.",
+          ],
+        },
+        {
+          heading: "4. Zweck der Datenbearbeitung",
+          body: [
+            "Wir bearbeiten Personendaten insbesondere zu folgenden Zwecken:",
+            {
+              list: [
+                "Bereitstellung und Betrieb der Website",
+                "Beantwortung von Anfragen",
+                "Kommunikation mit Interessenten und Kunden",
+                "Vorbereitung und Durchführung von Dienstleistungen",
+                "Verbesserung der Sicherheit und Stabilität der Website",
+                "Erfüllung gesetzlicher Pflichten",
+              ],
+            },
+          ],
+        },
+        {
+          heading: "5. Weitergabe von Daten",
+          body: [
+            "Personendaten werden nicht verkauft und nicht ohne Grund an Dritte weitergegeben.",
+            "Eine Weitergabe kann erfolgen, wenn dies zur Bereitstellung der Website, zur Bearbeitung einer Anfrage, zur Erfüllung einer Dienstleistung, aus rechtlichen Gründen oder zur Zusammenarbeit mit technischen Dienstleistern erforderlich ist.",
+            "Mögliche Dienstleister sind insbesondere Hosting-Anbieter, E-Mail-Anbieter oder technische Plattformen, die für den Betrieb der Website eingesetzt werden.",
+          ],
+        },
+        {
+          heading: "6. Speicherung und Sicherheit",
+          body: [
+            "Wir speichern Personendaten nur so lange, wie dies für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.",
+            "Wir treffen angemessene technische und organisatorische Massnahmen, um Personendaten vor Verlust, Missbrauch, unbefugtem Zugriff und unberechtigter Bearbeitung zu schützen.",
+          ],
+        },
+        {
+          heading: "7. Ihre Rechte",
+          body: [
+            "Sie haben im Rahmen des anwendbaren Datenschutzrechts insbesondere das Recht:",
+            {
+              list: [
+                "Auskunft über bearbeitete Personendaten zu verlangen",
+                "unrichtige Personendaten berichtigen zu lassen",
+                "die Löschung von Personendaten zu verlangen, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen",
+                "die Einschränkung der Bearbeitung zu verlangen",
+                "einer Datenbearbeitung zu widersprechen",
+              ],
+            },
+            "Zur Ausübung Ihrer Rechte können Sie uns unter folgender E-Mail-Adresse kontaktieren: noah@wuhrmann-solutions.ch",
+          ],
+        },
+        {
+          heading: "8. Externe Dienste und Links",
+          body: [
+            "Unsere Website kann Links zu externen Websites enthalten. Für die Inhalte und den Datenschutz externer Websites sind die jeweiligen Anbieter verantwortlich.",
+            "Wenn externe Dienste wie GitHub Pages, Google Search Console oder Hosting-Dienste eingesetzt werden, können diese Anbieter technische Daten verarbeiten, die für den Betrieb, die Sicherheit oder die Analyse der Website erforderlich sind.",
+          ],
+        },
+        {
+          heading: "9. Änderungen dieser Datenschutzerklärung",
+          body: [
+            "Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen, damit sie den aktuellen rechtlichen Anforderungen entspricht oder Änderungen unserer Website und Dienstleistungen berücksichtigt.",
+          ],
+        },
+      ],
+    },
     footer: "",
   },
   en: {
@@ -589,6 +769,8 @@ export const siteCopy: Record<Language, SiteCopy> = {
       "/skills": "Skills",
       "/projects": "Projects",
       "/contact": "Contact",
+      "/impressum": "Legal Notice",
+      "/datenschutz": "Privacy Policy",
     },
     home: {
       eyebrow: "Where business, technology and practice meet",
@@ -979,6 +1161,146 @@ export const siteCopy: Record<Language, SiteCopy> = {
           label: "Location",
           value: "Greater Zurich Area, Switzerland",
           badge: "ZH",
+        },
+      ],
+    },
+    impressum: {
+      eyebrow: "Legal",
+      title: "Legal Notice",
+      lead: "Information about the person responsible for this website.",
+      detailsLabel: "Details",
+      address: [
+        "Wuhrmann Solutions",
+        "Noah Wuhrmann",
+        "Klotenerstrasse 50",
+        "8303 Bassersdorf",
+        "Switzerland",
+      ],
+      contactLabel: "Contact",
+      emailLabel: "Email",
+      email: "noah@wuhrmann-solutions.ch",
+      websiteLabel: "Website",
+      website: "www.wuhrmann-solutions.ch",
+      websiteHref: "https://www.wuhrmann-solutions.ch",
+      responsibleLabel: "Responsible for the content of this website",
+      responsibleName: "Noah Wuhrmann",
+    },
+    datenschutz: {
+      eyebrow: "Legal",
+      title: "Privacy Policy",
+      navLabel: "Privacy",
+      lead: "How we handle your personal data and the rights you have.",
+      updated: "Last updated: June 2026",
+      sections: [
+        {
+          heading: "1. General",
+          body: [
+            "Protecting your personal data is important to Wuhrmann Solutions. We treat personal data confidentially and in accordance with the applicable legal provisions of the Swiss Data Protection Act (DSG) and, where applicable, the General Data Protection Regulation of the European Union (GDPR).",
+            "In this privacy policy, we inform you about which personal data we process, for what purposes this is done and which rights you have.",
+          ],
+        },
+        {
+          heading: "2. Responsible entity",
+          body: [
+            { address: ["Wuhrmann Solutions", "Noah Wuhrmann", "Klotenerstrasse 50", "8303 Bassersdorf", "Switzerland"] },
+            "Email: noah@wuhrmann-solutions.ch",
+            "Website: www.wuhrmann-solutions.ch",
+          ],
+        },
+        {
+          heading: "3. Collection and processing of personal data",
+          body: [
+            { sub: "3.1 Visiting the website" },
+            "When you access our website, technical data may be processed automatically. This includes in particular:",
+            {
+              list: [
+                "IP address",
+                "date and time of access",
+                "pages and files accessed",
+                "browser used",
+                "operating system used",
+                "referrer URL",
+                "technical connection information",
+              ],
+            },
+            "This data is used for the technical provision of the website, for security, error analysis and the stability of the online offering.",
+            "The main website www.wuhrmann-solutions.ch is hosted via Infomaniak. The personal subdomain noah.wuhrmann-solutions.ch may be provided via GitHub Pages.",
+            { sub: "3.2 Contact by email" },
+            "If you contact us by email, we process the information you provide. This may include:",
+            {
+              list: [
+                "name",
+                "email address",
+                "company",
+                "phone number, if provided voluntarily",
+                "the content of your message",
+                "further information you provide voluntarily",
+              ],
+            },
+            "We use this data exclusively to process your request, to communicate with you and, where applicable, to prepare or carry out a business collaboration.",
+            { sub: "3.3 Contact form" },
+            "There is currently no contact form on this website. Contact is made directly by email to noah@wuhrmann-solutions.ch. Only the data that you voluntarily provide in your message is processed.",
+          ],
+        },
+        {
+          heading: "4. Purpose of data processing",
+          body: [
+            "We process personal data in particular for the following purposes:",
+            {
+              list: [
+                "provision and operation of the website",
+                "answering enquiries",
+                "communication with prospects and clients",
+                "preparation and delivery of services",
+                "improving the security and stability of the website",
+                "compliance with legal obligations",
+              ],
+            },
+          ],
+        },
+        {
+          heading: "5. Disclosure of data",
+          body: [
+            "Personal data is not sold and is not passed on to third parties without reason.",
+            "Disclosure may occur where this is necessary for the provision of the website, for processing an enquiry, for delivering a service, for legal reasons or for cooperation with technical service providers.",
+            "Possible service providers include in particular hosting providers, email providers or technical platforms used to operate the website.",
+          ],
+        },
+        {
+          heading: "6. Storage and security",
+          body: [
+            "We store personal data only for as long as is necessary for the respective purpose or as required by statutory retention obligations.",
+            "We take appropriate technical and organisational measures to protect personal data against loss, misuse, unauthorised access and unauthorised processing.",
+          ],
+        },
+        {
+          heading: "7. Your rights",
+          body: [
+            "Within the scope of applicable data protection law, you have in particular the right:",
+            {
+              list: [
+                "to request information about the personal data processed",
+                "to have inaccurate personal data corrected",
+                "to request the deletion of personal data, provided that no statutory retention obligations apply",
+                "to request the restriction of processing",
+                "to object to data processing",
+              ],
+            },
+            "To exercise your rights, you can contact us at the following email address: noah@wuhrmann-solutions.ch",
+          ],
+        },
+        {
+          heading: "8. External services and links",
+          body: [
+            "Our website may contain links to external websites. The respective providers are responsible for the content and data protection of external websites.",
+            "When external services such as GitHub Pages, Google Search Console or hosting services are used, these providers may process technical data required for the operation, security or analysis of the website.",
+          ],
+        },
+        {
+          heading: "9. Changes to this privacy policy",
+          body: [
+            "We reserve the right to amend this privacy policy at any time so that it complies with current legal requirements or reflects changes to our website and services.",
+          ],
         },
       ],
     },

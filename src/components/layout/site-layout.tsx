@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "react"
-import { NavLink, Outlet, useLocation } from "react-router-dom"
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom"
 
 import { useLanguage } from "@/lib/language-context"
 import { REVEAL_INTENT_EVENT } from "@/lib/reveal-events"
@@ -221,6 +221,14 @@ export function SiteLayout() {
           <footer className="site-footer">
             <div className="container footer-row">
               <span>© {new Date().getFullYear()} Noah Wuhrmann</span>
+              <div className="footer-legal">
+                <Link className="footer-link" to="/impressum">
+                  {copy.impressum.title}
+                </Link>
+                <Link className="footer-link" to="/datenschutz">
+                  {copy.datenschutz.navLabel}
+                </Link>
+              </div>
             </div>
           </footer>
         )}

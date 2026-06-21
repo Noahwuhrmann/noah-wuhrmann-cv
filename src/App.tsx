@@ -5,7 +5,9 @@ import { SiteLayout } from "@/components/layout/site-layout"
 import { LanguageProvider } from "@/lib/language-context"
 import { AboutPage } from "@/pages/about-page"
 import { ContactPage } from "@/pages/contact-page"
+import { DatenschutzPage } from "@/pages/datenschutz-page"
 import { HomePage } from "@/pages/home-page"
+import { ImpressumPage } from "@/pages/impressum-page"
 import { ProjectsPage } from "@/pages/projects-page"
 import { ResumePage } from "@/pages/resume-page"
 import { SkillsPage } from "@/pages/skills-page"
@@ -55,6 +57,8 @@ export default function App() {
             <Route path="/skills" element={<SkillsPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/impressum" element={<ImpressumPage />} />
+            <Route path="/datenschutz" element={<DatenschutzPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
